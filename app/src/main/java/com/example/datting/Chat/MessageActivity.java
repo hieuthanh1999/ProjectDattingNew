@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,7 +41,7 @@ public class MessageActivity extends AppCompatActivity {
     EditText editText;
     CircleImageView image_message;
     TextView name_message;
-
+    ImageView quaylai;
     // user name for the chat lấy tên thiết bi
     //public static final String USER_NAME = Build.TAGS;
     public static final String USER_NAME = Build.USER;
@@ -64,6 +65,7 @@ public class MessageActivity extends AppCompatActivity {
         name_message = findViewById(R.id.name_message);
         recyclerView = findViewById(R.id.recyc_chat);
         editText = findViewById(R.id.edit_message);
+        quaylai = findViewById(R.id.quaylai);
 
         Intent intent = getIntent();
         int image = intent.getIntExtra("image", 0);
@@ -71,7 +73,7 @@ public class MessageActivity extends AppCompatActivity {
 
         image_message.setImageResource(image);
         name_message.setText(name);
-
+        quaylai();
 
         adapterMessage = new AdapterMessage(this, messages);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -79,7 +81,15 @@ public class MessageActivity extends AppCompatActivity {
         connect();
 
     }
-
+    private  void quaylai()
+    {
+        quaylai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+    }
     private void connect() {
         client = new MqttAndroidClient(this, BROKER_URI, clientId);
         try {

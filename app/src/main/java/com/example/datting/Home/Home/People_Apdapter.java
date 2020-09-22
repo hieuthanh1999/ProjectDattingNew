@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,50 +26,23 @@ public class People_Apdapter extends RecyclerView.Adapter<ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.custem_home, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.custom_home, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        People people1 = people.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+        final People people1 = people.get(position);
 
         holder.image1.setImageResource(people1.getImage());
         holder.name1.setText(people1.getName());
-
-        holder.image2.setImageResource(people1.getImage());
-        holder.name1.setText(people1.getName());
-
-        holder.image3.setImageResource(people1.getImage());
-        holder.name1.setText(people1.getName());
-
-        holder.image4.setImageResource(people1.getImage());
-        holder.name1.setText(people1.getName());
-
-        holder.image5.setImageResource(people1.getImage());
-        holder.name1.setText(people1.getName());
-
-        holder.image6.setImageResource(people1.getImage());
-        holder.name1.setText(people1.getName());
-
-        holder.image7.setImageResource(people1.getImage());
-        holder.name1.setText(people1.getName());
-
-        holder.image8.setImageResource(people1.getImage());
-        holder.name1.setText(people1.getName());
-
-        holder.image9.setImageResource(people1.getImage());
-        holder.name1.setText(people1.getName());
-
-        holder.image10.setImageResource(people1.getImage());
-        holder.name1.setText(people1.getName());
-
-        holder.image11.setImageResource(people1.getImage());
-        holder.name1.setText(people1.getName());
-
-        holder.image12.setImageResource(people1.getImage());
-        holder.name1.setText(people1.getName());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button_Sheets_dialog button_sheets_dialog = Button_Sheets_dialog.newInstance();
+            }
+        });
 
 
     }

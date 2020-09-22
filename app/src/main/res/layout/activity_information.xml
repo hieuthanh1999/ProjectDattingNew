@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffff">
+
     <LinearLayout
         android:id="@+id/info"
         android:layout_width="match_parent"
@@ -14,12 +15,14 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
+
             <ImageView
                 android:id="@+id/cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/quaylai" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -37,30 +40,10 @@
 
     <TextView
         android:id="@+id/thanhngang"
-        android:layout_below="@id/info"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_below="@id/info"
         android:background="#000000" />
 
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/thanhngang"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:weightSum="2">
-            <TextView
-                android:text="ahihi"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
 
-
-        </LinearLayout>
-
-    </ScrollView>
 </RelativeLayout>

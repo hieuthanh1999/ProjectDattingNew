@@ -22,6 +22,7 @@ repositories {
     maven {
         url "https://repo.eclipse.org/content/repositories/paho-releases/"
     }
+    mavenCentral()
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -42,5 +43,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.yuyakaido.android:card-stack-view:2.3.4'
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.intuit.sdp:sdp-android:1.0.5'
+    implementation 'com.google.android.material:material:1.0.0'
+
 
 }

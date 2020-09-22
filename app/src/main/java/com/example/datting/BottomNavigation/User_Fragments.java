@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.datting.R;
 import com.example.datting.Users.Information;
@@ -40,10 +42,13 @@ public class User_Fragments extends Fragment {
             public void onClick(View view) {
 //                Intent intent = new Intent(getContext(), Setting_Fragments.class);
 //                startActivity(intent);
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Setting_Fragments()).commit();
-
+                Setting_Fragments setting_fragments = new Setting_Fragments();
+                //setting_fragments.setA(1);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, setting_fragments).commit();
             }
         });
+
+
         information.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +56,6 @@ public class User_Fragments extends Fragment {
                 startActivity(intent);
             }
         });
-
     }
+
 }

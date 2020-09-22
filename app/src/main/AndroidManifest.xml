@@ -17,14 +17,17 @@
         <activity android:name=".Users.Information"></activity>
         <activity android:name=".Users.Setting" />
         <activity android:name=".BottomNavigation_Activity">
+
+        </activity>
+        <activity android:name=".Chat.MessageActivity" />
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Chat.MessageActivity" />
-        <activity android:name=".MainActivity" />
+
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>
