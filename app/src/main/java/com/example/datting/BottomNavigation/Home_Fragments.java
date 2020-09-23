@@ -42,7 +42,6 @@ public class Home_Fragments extends Fragment {
         manager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_MOVE_ITEMS_BETWEEN_SPANS);
         recyclerView.addItemDecoration(new CustomItemDecorator(getResources().getDimensionPixelSize(R.dimen._16sdp), getResources().getDimensionPixelSize(R.dimen._90sdp)));
         recyclerView.setLayoutManager(manager);
-        recyclerView.setHasFixedSize(true);
 
 //        linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         People_Apdapter studentAdapter = new People_Apdapter(people, getContext());
@@ -54,18 +53,12 @@ public class Home_Fragments extends Fragment {
     public  void data()
     {
         people = new ArrayList<>();
-        people.add(new People("Nam Thần", R.drawable.thanhh));
-        people.add(new People("Hiếu Thành", R.drawable.xinh3));
-        people.add(new People("Nam Anh", R.drawable.xinh2));
-        people.add(new People("Nam handsome", R.drawable.xinh1));
-        people.add(new People("Thành handsome", R.drawable.jisoo01));
-        people.add(new People("Đỗ Linh", R.drawable.jisso));
-        people.add(new People("Hồng Nhung", R.drawable.thanhh));
-        people.add(new People("Nhung", R.drawable.nhunglon));
-        people.add(new People("Maria Ozawa", R.drawable.ngoctrinh));
-        people.add(new People("Ngọc Trinh", R.drawable.linh));
-        people.add(new People("Chi Pu", R.drawable.thanhne));
-        people.add(new People("Kiên", R.drawable.thanhh));
-
+        for(int i=0;i<3;i++)
+        {
+            people.add(new People("Nam Thần", R.drawable.thanhh, 18, "Ha Noi"));
+            people.add(new People("Hiếu Thành ", R.drawable.nhunglon, 20, "Đông Anh"));
+            people.add(new People("Hồng Nhung", R.drawable.nhung12, 21, "Thanh Xuân"));
+            people.add(new People("Nam Đzai", R.drawable.nhungheo, 18, "Ha Noi"));
+        }
     }
 }

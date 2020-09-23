@@ -14,8 +14,6 @@ public class CardStackCallback extends DiffUtil.Callback {
         this.baru = baru;
     }
 
-
-
     @Override
     public int getOldListSize() {
         return old.size();

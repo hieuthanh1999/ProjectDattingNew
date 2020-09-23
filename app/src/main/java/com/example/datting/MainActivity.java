@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final long RUN_TIME = 4000 ;
+    private static final long RUN_TIME = 3000 ;
     Animation topAnim, botAnim;
     LinearLayout layout1, layout2;
 

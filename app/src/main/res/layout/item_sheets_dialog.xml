@@ -48,7 +48,7 @@
             android:textSize="26sp"
             android:textStyle="bold" />
         <LinearLayout
-            android:weightSum="2"
+            android:weightSum="4"
             android:orientation="horizontal"
             android:layout_weight="1"
             android:layout_width="match_parent"
@@ -56,7 +56,7 @@
             <TextView
                 android:text="Ha Noi"
                 android:gravity="right"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:layout_gravity="center"
                 android:id="@+id/item_city"
                 android:layout_width="0dp"
@@ -65,32 +65,36 @@
                 android:textColor="@android:color/white"
                 android:textSize="16sp"/>
             <LinearLayout
-                android:layout_weight=""
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/custom_gioitinh"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                android:layout_width="50dp"
-                android:layout_height="15dp">
-                <ImageView
-                    android:layout_marginLeft="5dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/girl1"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"/>
-                <TextView
-
-                    android:layout_marginLeft="8dp"
-                    android:layout_weight="1"
-                    android:text="14"
-                    android:id="@+id/item_age"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:textSize="12sp"/>
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/custom_gioitinh"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_width="50dp"
+                    android:layout_height="15dp">
+                    <ImageView
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/girl1"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"/>
+                    <TextView
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:text="14"
+                        android:id="@+id/item_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"/>
+                </LinearLayout>
             </LinearLayout>
+
 
         </LinearLayout>
         <LinearLayout

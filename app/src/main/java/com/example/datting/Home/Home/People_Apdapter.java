@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.datting.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
 
@@ -44,9 +46,27 @@ public class People_Apdapter extends RecyclerView.Adapter<ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    //context.startActivity(new Intent(context, Button_Sheets_dialog.class));
+
+                //Toast.makeText(context, people1.getName(), Toast.LENGTH_LONG).show();
+                //context.startActivity(new Intent(context, Button_Sheets_dialog.class));
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context, R.style.BottomSheetDialogTheme);
                 View botton = LayoutInflater.from(context).inflate(R.layout.item_sheets_dialog, (LinearLayout) view.findViewById(R.id.bottonSheets));
+
+                  RoundedImageView itemImage;
+                  TextView itemName;
+                  TextView itemCity;
+                  TextView itemAge;
+
+                itemCity = botton.findViewById(R.id.item_city);
+                itemAge = botton.findViewById(R.id.item_age);
+
+                itemImage = botton.findViewById(R.id.item_image);
+                itemName = botton.findViewById(R.id.item_name);
+
+                itemAge.setText(String.valueOf(people1.getAge()));
+                itemCity.setText(people1.getAdress());
+                itemName.setText(people1.getName());
+                itemImage.setImageResource(people1.getImage());
                 bottomSheetDialog.setContentView(botton);
                 bottomSheetDialog.show();
             }

@@ -125,7 +125,7 @@
             android:layout_height="25dp"
             android:background="@drawable/dinhvi" />
 
-        <LinearLayout
+        <R
             android:layout_marginLeft="0dp"
             android:layout_alignParentBottom="true"
             android:weightSum="4"
@@ -157,7 +157,7 @@
                 android:background="?attr/selectableItemBackground"
                 android:text="Gửi"
                 android:textColor="#ff69b4" />
-        </LinearLayout>
+        </R>
 
     </LinearLayout>
 </RelativeLayout>
