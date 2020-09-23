@@ -55,7 +55,7 @@ public class Home_Fragments extends Fragment {
         people = new ArrayList<>();
         for(int i=0;i<3;i++)
         {
-            people.add(new People("Nam Thần", R.drawable.thanhh, 18, "Ha Noi"));
+            people.add(new People("Nam Thần", R.drawable.linh, 18, "Ha Noi"));
             people.add(new People("Hiếu Thành ", R.drawable.nhunglon, 20, "Đông Anh"));
             people.add(new People("Hồng Nhung", R.drawable.nhung12, 21, "Thanh Xuân"));
             people.add(new People("Nam Đzai", R.drawable.nhungheo, 18, "Ha Noi"));
