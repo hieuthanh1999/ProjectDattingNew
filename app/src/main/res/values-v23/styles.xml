@@ -21,5 +21,12 @@
         <item name="android:background">#C73A3A</item>
     </style>
 
-
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+<!--        <item name="android:width">450dp</item>-->
+        <item name="behavior_peekHeight">670dp</item>
+        <item name="android:background">#9CA09D</item>
+    </style>
 </resources>
