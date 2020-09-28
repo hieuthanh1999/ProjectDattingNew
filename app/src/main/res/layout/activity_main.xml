@@ -20,12 +20,14 @@
         android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/traitym"
                 android:layout_marginTop="50dp"
                 android:background="@drawable/icon_1"
-                android:layout_width="120dp"
-                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 />
             <ImageView
+                android:id="@+id/name"
                 android:background="@drawable/icon_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

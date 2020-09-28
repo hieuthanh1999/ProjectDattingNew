@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.datting.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.makeramen.roundedimageview.RoundedImageView;
@@ -41,7 +42,9 @@ public class People_Apdapter extends RecyclerView.Adapter<ViewHolder> {
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         final People people1 = people.get(position);
 
-        holder.image1.setImageResource(people1.getImage());
+        //holder.image1.setImageResource(people1.getImage());
+        Glide.with(context).load(people1.getImage()).into(holder.image1);
+        Glide.with(context).load(people1.getImage_status()).into(holder.image_status);
         holder.name1.setText(people1.getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +55,7 @@ public class People_Apdapter extends RecyclerView.Adapter<ViewHolder> {
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context, R.style.BottomSheetDialogTheme);
                 View botton = LayoutInflater.from(context).inflate(R.layout.item_sheets_dialog, (LinearLayout) view.findViewById(R.id.bottonSheets));
 
-                  RoundedImageView itemImage;
+                  RoundedImageView itemImage, imageStatus;
                   TextView itemName;
                   TextView itemCity;
                   TextView itemAge;
@@ -62,17 +65,20 @@ public class People_Apdapter extends RecyclerView.Adapter<ViewHolder> {
 
                 itemImage = botton.findViewById(R.id.item_image);
                 itemName = botton.findViewById(R.id.item_name);
+                imageStatus = botton.findViewById(R.id.image_status);
 
                 itemAge.setText(String.valueOf(people1.getAge()));
                 itemCity.setText(people1.getAdress());
                 itemName.setText(people1.getName());
-                itemImage.setImageResource(people1.getImage());
+                //itemImage.setImageResource(people1.getImage());
+
+                Glide.with(context).load(people1.getImage()).into(itemImage);
+
+
                 bottomSheetDialog.setContentView(botton);
                 bottomSheetDialog.show();
             }
-        });
-
-    }
+        }); }
 
     @Override
     public int getItemCount() {

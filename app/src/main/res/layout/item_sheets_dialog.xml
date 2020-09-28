@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+
     android:id="@+id/bottonSheets"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,18 +8,18 @@
     android:layout_height="match_parent"
     app:cardUseCompatPadding="true"
     app:cardPreventCornerOverlap="false"
-    android:background ="#666666"
+    android:background ="#00000000"
     app:cardCornerRadius="@dimen/_10sdp"
   >
     <RelativeLayout
+        android:layout_marginTop="@dimen/_50sdp"
         android:paddingBottom="@dimen/_10sdp"
         android:paddingTop="5dp"
         android:paddingLeft="@dimen/_10sdp"
         android:paddingRight="@dimen/_10sdp"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="650dp">
-
+        android:layout_height="match_parent">
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/item_image"
             android:layout_width="match_parent"

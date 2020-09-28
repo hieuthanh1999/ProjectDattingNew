@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.datting.Chat.AdapterChat.AdapterMessage;
 import com.example.datting.Model.Message;
 import com.example.datting.R;
@@ -39,7 +40,7 @@ public class MessageActivity extends AppCompatActivity {
     public static final int QOS = 2;
 
     EditText editText;
-    CircleImageView image_message;
+    CircleImageView image_message, image_status;
     TextView name_message;
     ImageView quaylai;
     // user name for the chat lấy tên thiết bi
@@ -66,12 +67,16 @@ public class MessageActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyc_chat);
         editText = findViewById(R.id.edit_message);
         quaylai = findViewById(R.id.quaylai);
+        image_status = findViewById(R.id.image_status);
 
         Intent intent = getIntent();
         int image = intent.getIntExtra("image", 0);
+        int image_status1 = intent.getIntExtra("image_status", 0);
         String name = intent.getStringExtra("name");
 
-        image_message.setImageResource(image);
+        Glide.with(this).load(image).into(image_message);
+        Glide.with(this).load(image_status1).into(image_status);
+        //image_message.setImageResource(image);
         name_message.setText(name);
         quaylai();
 

@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.datting.BottomNavigation.Chat_Fragments;
 import com.example.datting.Chat.MessageActivity;
 import com.example.datting.Model.PeopleClass;
@@ -38,7 +39,10 @@ public class AdapterChat extends RecyclerView.Adapter<ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final PeopleClass people = peopleClasses.get(position);
 
-        holder.image_mess.setImageResource(people.getImage());
+       // holder.image_mess.setImageResource(people.getImage());
+        Glide.with(context).load(people.getImage()).into(holder.image_mess);
+        Glide.with(context).load(people.getImage_status()).into(holder.image_status);
+
         holder.name_mess.setText(people.getName());
         holder.message.setText(people.getMessage());
         holder.time.setText(people.getTime());
@@ -53,6 +57,7 @@ public class AdapterChat extends RecyclerView.Adapter<ViewHolder> {
                 Intent intent = new Intent(context, MessageActivity.class);
                 intent.putExtra("image",people.getImage());
                 intent.putExtra("name", people.getName());
+                intent.putExtra("image_status", people.getImage_status());
 
                 context.startActivity(intent);
 

@@ -56,18 +56,18 @@ public class Chat_Fragments extends Fragment {
     private  void data_mess()
     {
         people_mess = new ArrayList<>();
-        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.thanhh, "HIếu Thành anh đây", "16 phút", 4));
-        people_mess.add(new PeopleClass("Trường", R.drawable.nhunglon, "HIếu Thành pro", "16 phút", 6));
-        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.thanhne, "HIếu Thành anh đây", "16 phút", 4));
-        people_mess.add(new PeopleClass("Thành", R.drawable.ngoctrinh, "HIếu Thành pro", "20/7/2020"));
-        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.ngoctrinh, "HIếu Thành anh đây", "02/02/2020", 5));
-        people_mess.add(new PeopleClass("Kiên", R.drawable.ngoctrinh, "HIếu Thành pro", "22/5/2020", 2));
-        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.thanhh, "HIếu Thành anh đây", "16 phút", 4));
-        people_mess.add(new PeopleClass("Trường", R.drawable.nhunglon, "HIếu Thành pro", "16 phút", 6));
-        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.thanhne, "HIếu Thành anh đây", "16 phút", 4));
-        people_mess.add(new PeopleClass("Thành", R.drawable.ngoctrinh, "HIếu Thành pro", "20/7/2020"));
-        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.ngoctrinh, "HIếu Thành anh đây", "02/02/2020", 5));
-        people_mess.add(new PeopleClass("Kiên", R.drawable.ngoctrinh, "HIếu Thành pro", "22/5/2020", 2));
+        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.thanhh,R.drawable.online, "HIếu Thành anh đây", "16 phút", 4));
+        people_mess.add(new PeopleClass("Trường", R.drawable.nhunglon,R.drawable.online, "HIếu Thành pro", "16 phút", 6));
+        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.thanhne,R.drawable.online, "HIếu Thành anh đây", "16 phút", 4));
+        people_mess.add(new PeopleClass("Thành", R.drawable.ngoctrinh,R.drawable.online, "HIếu Thành pro", "20/7/2020", 0));
+        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.ngoctrinh,R.drawable.online, "HIếu Thành anh đây", "02/02/2020", 5));
+        people_mess.add(new PeopleClass("Kiên", R.drawable.ngoctrinh,R.drawable.online, "HIếu Thành pro", "22/5/2020", 2));
+        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.thanhh,R.drawable.online, "HIếu Thành anh đây", "16 phút", 4));
+        people_mess.add(new PeopleClass("Trường", R.drawable.nhunglon,R.drawable.online, "HIếu Thành pro", "16 phút", 6));
+        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.thanhne,R.drawable.online, "HIếu Thành anh đây", "16 phút", 4));
+        people_mess.add(new PeopleClass("Thành", R.drawable.ngoctrinh,R.drawable.online, "HIếu Thành pro", "20/7/2020", 0));
+        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.ngoctrinh,R.drawable.online, "HIếu Thành anh đây", "02/02/2020", 5));
+        people_mess.add(new PeopleClass("Kiên", R.drawable.ngoctrinh,R.drawable.online, "HIếu Thành pro", "22/5/2020", 2));
     }
     private void recycView_mess()
     {

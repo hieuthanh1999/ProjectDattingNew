@@ -25,7 +25,7 @@
         <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
     </style>
     <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
-        <item name="behavior_peekHeight">730dp</item>
-        <item name="android:background">#9CA09D</item>
+        <item name="behavior_peekHeight">1000dp</item>
+        <item name="android:background">#00000000</item>
     </style>
 </resources>

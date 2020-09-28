@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.datting.Chat.MessageActivity;
 import com.example.datting.Model.PeopleClass;
 import com.example.datting.R;
@@ -36,7 +37,8 @@ public class AdapterStatus extends RecyclerView.Adapter<ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final PeopleClass people = peopleClasses.get(position);
-        holder.image_status.setImageResource(people.getImage());
+        //holder.image_status.setImageResource(people.getImage());
+        Glide.with(context).load(people.getImage()).into(holder.image_status);
         holder.name_status.setText(people.getName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

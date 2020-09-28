@@ -8,20 +8,28 @@ import android.os.Handler;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final long RUN_TIME = 3000 ;
     Animation topAnim, botAnim;
     LinearLayout layout1, layout2;
-
+    ImageView traitym, name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
+        traitym = findViewById(R.id.traitym);
+        name = findViewById(R.id.name);
+
+        Glide.with(this).load(R.drawable.icon_1).into(traitym);
+        Glide.with(this).load(R.drawable.icon_3).into(name);
 
         animation();
         new Handler().postDelayed(new Runnable() {
