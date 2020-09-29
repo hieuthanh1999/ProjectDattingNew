@@ -44,6 +44,7 @@ public class Meet_Fragments extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
         super.onViewCreated(view, savedInstanceState);
         addList();
 
@@ -54,17 +55,19 @@ public class Meet_Fragments extends Fragment {
             public void onCardDragging(Direction direction, float ratio) {
                 Log.d(TAG, "onCardDragging: d=" + direction.name() + " ratio=" + ratio);
             }
+
             @Override
             public void onCardSwiped(Direction direction) {
+
                 Log.d(TAG, "onCardSwiped: p=" + manager.getTopPosition() + " d=" + direction);
                 if (direction == Direction.Right) {
-                   // Toast.makeText(getContext(), "Direction Right", Toast.LENGTH_SHORT).show();
+
                 }
                 if (direction == Direction.Top) {
-                   //Toast.makeText(getContext(), "Direction Top", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(), "Direction Top", Toast.LENGTH_SHORT).show();
                 }
                 if (direction == Direction.Left) {
-                    //Toast.makeText(getContext(), "Direction Left", Toast.LENGTH_SHORT).show();
+
                 }
                 if (direction == Direction.Bottom) {
                     //Toast.makeText(getContext(), "Direction Bottom", Toast.LENGTH_SHORT).show();
@@ -73,6 +76,7 @@ public class Meet_Fragments extends Fragment {
                 // Paginating
                 if (manager.getTopPosition() == adapter.getItemCount() - 5) {
                     paginate();
+
                 }
 
             }
@@ -91,20 +95,30 @@ public class Meet_Fragments extends Fragment {
             public void onCardAppeared(View view, int position) {
                 tv = view.findViewById(R.id.item_name);
                 Log.d(TAG, "onCardAppeared: " + position + ", nama: " + tv.getText());
-            }
+                if (meets != null)
+                {
+                    addList();
+                }
+                else {
+                    addList();
+                }
+               }
 
             @Override
             public void onCardDisappeared(View view, int position) {
                 tv = view.findViewById(R.id.item_name);
                 Log.d(TAG, "onCardAppeared: " + position + ", nama: " + tv.getText());
+                addList();
             }
         });
         //
 
-        adapter = new MeetAdapter(meets, getContext());
+
+        adapter = new MeetAdapter(meets, getContext(), manager);
         cardStackView.setLayoutManager(manager);
         cardStackView.setAdapter(adapter);
         cardStackView.setItemAnimator(new DefaultItemAnimator());
+
 
     }
 
@@ -115,28 +129,13 @@ public class Meet_Fragments extends Fragment {
         DiffUtil.DiffResult hasil = DiffUtil.calculateDiff(callback);
         adapter.setMeets(baru);
         hasil.dispatchUpdatesTo(adapter);
-
     }
 
     private void addList() {
+
         meets.add(new Meet(R.drawable.nhungheo, "Ji Soo", "25", "Korea"));
         meets.add(new Meet(R.drawable.thanhh, "Hieu Thanh", "25", "Korea"));
         meets.add(new Meet(R.drawable.thanhh, "Nhung hong", "25", "Korea"));
-        meets.add(new Meet(R.drawable.nhung12, "Ji Soo", "25", "Korea"));
-        meets.add(new Meet(R.drawable.nhunglon, "Ji Soo", "25", "Korea"));
-        meets.add(new Meet(R.drawable.xinh2, "Ji Soo", "25", "Korea"));
-        meets.add(new Meet(R.drawable.nhungheo, "Ji Soo", "25", "Korea"));
-        meets.add(new Meet(R.drawable.thanhh, "Ji Soo", "25", "Korea"));
-        meets.add(new Meet(R.drawable.thanhh, "Ji Soo", "25", "Korea"));
-        meets.add(new Meet(R.drawable.nhung12, "Ji Soo", "25", "Korea"));
-        meets.add(new Meet(R.drawable.nhunglon, "Ji Soo", "25", "Korea"));
-        meets.add(new Meet(R.drawable.xinh2, "Ji Soo", "25", "Korea"));
-        meets.add(new Meet(R.drawable.nhungheo, "Ji Soo", "25", "Korea"));
-        meets.add(new Meet(R.drawable.thanhh, "Ji Soo", "25", "Korea"));
-        meets.add(new Meet(R.drawable.thanhh, "Ji Soo", "25", "Korea"));
-        meets.add(new Meet(R.drawable.nhung12, "Ji Soo", "25", "Korea"));
-        meets.add(new Meet(R.drawable.nhunglon, "Ji Soo", "25", "Korea"));
-        meets.add(new Meet(R.drawable.xinh2, "Ji Soo", "25", "Korea"));
 
 
     }

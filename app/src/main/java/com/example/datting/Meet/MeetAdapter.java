@@ -26,10 +26,12 @@ import com.yuyakaido.android.cardstackview.SwipeableMethod;
 
 import java.util.ArrayList;
 
+import static android.view.View.VISIBLE;
+
 public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
     private ArrayList<Meet> meets;
     Context context;
-
+    CardStackLayoutManager manager;
     public ArrayList<Meet> getMeets() {
         return meets;
     }
@@ -39,10 +41,10 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
     }
 
 
-
-    public MeetAdapter(ArrayList<Meet> meets, Context context) {
+    public MeetAdapter(ArrayList<Meet> meets, Context context, CardStackLayoutManager manager) {
         this.meets = meets;
         this.context = context;
+        this.manager = manager;
     }
 
     @NonNull
@@ -55,48 +57,56 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         final Meet meet = meets.get(position);
-        holder.linearLayout.setVisibility(View.VISIBLE);
-        holder.nama.setVisibility(View.VISIBLE);
-        holder.setData(meets.get(position));
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.setData(meets.get(position));
+        holder.linearLayout.setVisibility(VISIBLE);
+//        }
+//        else{
+//            holder.linearLayout.setVisibility(VISIBLE);
+//            holder.setData(meets.get(position));
+//        }
+
+
+       holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.linearLayout.setVisibility(View.GONE);
-                //holder.cardView.setVisibility(View.VISIBLE);
-                holder.nama.setVisibility(View.GONE);
-                if(holder.itemView.callOnClick())
-                {
 
 
-                    holder.manager.setStackFrom(StackFrom.None);
-                    holder.manager.setVisibleCount(3);
-                    holder.manager.setTranslationInterval(8.0f);
-                    holder.manager.setScaleInterval(0.95f);
-                    holder.manager.setSwipeThreshold(0.3f);
-                    holder.manager.setMaxDegree(20.0f);
-                    holder.manager.setDirections(Direction.HORIZONTAL);
-                    holder.manager.setCanScrollHorizontal(true);
-                    holder.manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
-                    holder.manager.setOverlayInterpolator(new LinearInterpolator());
-                    holder.manager.setSwipeableMethod(SwipeableMethod.None);
-                }
-                else {
-                    holder.manager.setStackFrom(StackFrom.None);
-                    holder.manager.setVisibleCount(3);
-                    holder.manager.setTranslationInterval(8.0f);
-                    holder.manager.setScaleInterval(0.95f);
-                    holder.manager.setSwipeThreshold(0.3f);
-                    holder.manager.setMaxDegree(20.0f);
-                    holder.manager.setDirections(Direction.HORIZONTAL);
-                    holder.manager.setCanScrollHorizontal(true);
-                    holder.manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
-                    holder.manager.setOverlayInterpolator(new LinearInterpolator());
+                if (holder.linearLayout.getVisibility() == VISIBLE) {
+
+                    holder.linearLayout.setVisibility(View.GONE);
+                    manager.setSwipeableMethod(SwipeableMethod.None);
+                    manager.setStackFrom(StackFrom.None);
+//                    manager.setVisibleCount(3);
+                  //  manager.setTranslationInterval(8.0f);
+                    manager.setScaleInterval(0.4f);
+                    manager.setSwipeThreshold(0.3f);
+                    manager.setMaxDegree(20.0f);
+                    manager.setDirections(Direction.HORIZONTAL);
+                    manager.setCanScrollHorizontal(true);
+                    manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
+                    manager.setOverlayInterpolator(new LinearInterpolator());
+                    manager.setSwipeableMethod(SwipeableMethod.None);
+
+                } else {
+                    holder.linearLayout.setVisibility(VISIBLE);
+                    manager.setSwipeableMethod(SwipeableMethod.None);
+                    manager.setStackFrom(StackFrom.None);
+//                    manager.setVisibleCount(3);
+                    //  manager.setTranslationInterval(8.0f);
+                    manager.setScaleInterval(0.4f);
+                    manager.setSwipeThreshold(0.3f);
+                    manager.setMaxDegree(20.0f);
+                    manager.setDirections(Direction.HORIZONTAL);
+                    manager.setCanScrollHorizontal(true);
+                    manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
+                    manager.setOverlayInterpolator(new LinearInterpolator());
+
                 }
 
             }
         });
-}
+    }
 
     @Override
     public int getItemCount() {
@@ -105,11 +115,13 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        CardStackLayoutManager manager;
+
+
         ImageView image;
         TextView nama, usia, kota;
         CardView cardView;
         LinearLayout linearLayout;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -123,15 +135,12 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
         }
 
         public void setData(Meet meet) {
+
             Glide.with(context).load(meet.getImage()).into(image);
-//            Picasso.get()
-//                    .load(meet.getImage())
-//                    .fit()
-//                    .centerCrop()
-//                    .into(image);
             nama.setText(meet.getName());
             usia.setText(meet.getAge());
             kota.setText(meet.getAdress());
+
         }
     }
 
