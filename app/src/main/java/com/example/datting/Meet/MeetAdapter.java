@@ -60,6 +60,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
 
         holder.setData(meets.get(position));
         holder.linearLayout.setVisibility(VISIBLE);
+       holder.linearLayout_infor.setVisibility(View.GONE);
 //        }
 //        else{
 //            holder.linearLayout.setVisibility(VISIBLE);
@@ -87,7 +88,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
                     manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
                     manager.setOverlayInterpolator(new LinearInterpolator());
                     manager.setSwipeableMethod(SwipeableMethod.None);
-
+                   holder.linearLayout_infor.setVisibility(View.VISIBLE);
                 } else {
                     holder.linearLayout.setVisibility(VISIBLE);
                     manager.setSwipeableMethod(SwipeableMethod.None);
@@ -121,7 +122,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
         TextView nama, usia, kota;
         CardView cardView;
         LinearLayout linearLayout;
-
+        LinearLayout linearLayout_infor;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -131,6 +132,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
             kota = itemView.findViewById(R.id.item_city);
             linearLayout = itemView.findViewById(R.id.infor);
             cardView = itemView.findViewById(R.id.cardview);
+            linearLayout_infor = itemView.findViewById(R.id.infor_user);
 
         }
 
