@@ -74,7 +74,7 @@ public class Meet_Fragments extends Fragment {
                 }
 
                 // Paginating
-                if (manager.getTopPosition() == adapter.getItemCount() - 5) {
+                if (manager.getTopPosition() == adapter.getItemCount() - 1) {
                     paginate();
 
                 }
@@ -133,9 +133,16 @@ public class Meet_Fragments extends Fragment {
 
     private void addList() {
 
-        meets.add(new Meet(R.drawable.nhungheo, "Ji Soo", "25", "Korea"));
+        meets.add(new Meet(R.drawable.nhung5, "Ji Soo", "25", "Korea"));
         meets.add(new Meet(R.drawable.thanhh, "Hieu Thanh", "25", "Korea"));
-        meets.add(new Meet(R.drawable.thanhh, "Nhung hong", "25", "Korea"));
+        meets.add(new Meet(R.drawable.nhunglon, "Nhung hong", "25", "Korea"));
+        meets.add(new Meet(R.drawable.nhung12, "Ji Soo", "25", "Korea"));
+        meets.add(new Meet(R.drawable.nhung1, "Hieu Thanh", "25", "Korea"));
+        meets.add(new Meet(R.drawable.nhugn2, "Nhung hong", "25", "Korea"));
+        meets.add(new Meet(R.drawable.nhung3, "Ji Soo", "25", "Korea"));
+        meets.add(new Meet(R.drawable.nhungheo, "Hieu Thanh", "25", "Korea"));
+        meets.add(new Meet(R.drawable.nhung4, "Nhung hong", "25", "Korea"));
+
 
 
     }

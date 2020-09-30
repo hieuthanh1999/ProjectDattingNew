@@ -60,7 +60,7 @@
             android:layout_width="170dp"
             android:layout_height="170dp"
             android:layout_gravity="center"
-            android:src="@drawable/xinh4"
+            android:src="@drawable/nhung4"
             android:layout_marginTop="@dimen/_5sdp"/>
 
         <LinearLayout
