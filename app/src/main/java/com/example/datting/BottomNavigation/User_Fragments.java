@@ -28,7 +28,7 @@ public class User_Fragments extends Fragment {
 
     ImageView setting;
     TextView information;
-
+    ImageView abc;
 
     @Nullable
     @Override
