@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
     private ArrayList<Meet> meets;
     Context context;
     CardStackLayoutManager manager;
+
     public ArrayList<Meet> getMeets() {
         return meets;
     }
@@ -60,7 +62,8 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
 
         holder.setData(meets.get(position));
         holder.linearLayout.setVisibility(VISIBLE);
-       holder.linearLayout_infor.setVisibility(View.GONE);
+        holder.linearLayout_infor.setVisibility(View.GONE);
+        holder.status_infor.setVisibility(VISIBLE);
 //        }
 //        else{
 //            holder.linearLayout.setVisibility(VISIBLE);
@@ -68,27 +71,32 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
 //        }
 
 
-       holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+        holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
                 if (holder.linearLayout.getVisibility() == VISIBLE) {
-
+                    holder.status_infor.setVisibility(View.GONE);
                     holder.linearLayout.setVisibility(View.GONE);
+//                    manager.setSwipeableMethod(SwipeableMethod.None);
+//                    manager.setStackFrom(StackFrom.None);
+////                    manager.setVisibleCount(3);
+//                  //  manager.setTranslationInterval(8.0f);
+//                    manager.setScaleInterval(0.4f);
+//                    manager.setSwipeThreshold(0.3f);
+//                    manager.setMaxDegree(20.0f);
+//                    manager.setDirections(Direction.HORIZONTAL);
+//                    manager.setCanScrollHorizontal(true);
+//                    manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
+//                    manager.setOverlayInterpolator(new LinearInterpolator());
+
                     manager.setSwipeableMethod(SwipeableMethod.None);
-                    manager.setStackFrom(StackFrom.None);
-//                    manager.setVisibleCount(3);
-                  //  manager.setTranslationInterval(8.0f);
-                    manager.setScaleInterval(0.4f);
-                    manager.setSwipeThreshold(0.3f);
-                    manager.setMaxDegree(20.0f);
-                    manager.setDirections(Direction.HORIZONTAL);
-                    manager.setCanScrollHorizontal(true);
-                    manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
-                    manager.setOverlayInterpolator(new LinearInterpolator());
-                    manager.setSwipeableMethod(SwipeableMethod.None);
-                   holder.linearLayout_infor.setVisibility(View.VISIBLE);
+                    holder.linearLayout_infor.setVisibility(VISIBLE);
+                    holder.image_tinder.setPadding(0, 0, 0, 250 );
+                    //holder.image_tinder.setY(150);
+
+
                 } else {
                     holder.linearLayout.setVisibility(VISIBLE);
                     manager.setSwipeableMethod(SwipeableMethod.None);
@@ -122,7 +130,9 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
         TextView nama, usia, kota;
         CardView cardView;
         LinearLayout linearLayout;
-        LinearLayout linearLayout_infor;
+        LinearLayout linearLayout_infor, status_infor;
+        RelativeLayout image_tinder;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -132,8 +142,9 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
             kota = itemView.findViewById(R.id.item_city);
             linearLayout = itemView.findViewById(R.id.infor);
             cardView = itemView.findViewById(R.id.cardview);
+            status_infor = itemView.findViewById(R.id.status_tinder);
             linearLayout_infor = itemView.findViewById(R.id.infor_user);
-
+            image_tinder = itemView.findViewById(R.id.image_tinder);
         }
 
         public void setData(Meet meet) {

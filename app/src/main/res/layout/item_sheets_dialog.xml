@@ -11,11 +11,11 @@
     app:cardCornerRadius="@dimen/_10sdp"
   >
     <RelativeLayout
-        android:layout_marginTop="@dimen/_50sdp"
-        android:paddingBottom="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
         android:paddingTop="5dp"
-        android:paddingLeft="@dimen/_10sdp"
-        android:paddingRight="@dimen/_10sdp"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingRight="@dimen/_5sdp"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

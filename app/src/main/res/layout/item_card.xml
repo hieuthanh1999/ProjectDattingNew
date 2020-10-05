@@ -4,20 +4,27 @@
     android:id="@+id/cardview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/selectableItemBackground"
     android:foreground="?attr/selectableItemBackground"
-    app:cardBackgroundColor="@android:color/white"
-    app:cardCornerRadius="8dp"
+    android:background ="#ffff"
+    android:outlineSpotShadowColor="#ffff"
     app:cardPreventCornerOverlap="false"
     app:cardUseCompatPadding="true">
 <!--    <ScrollView-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="match_parent">-->
-    <ImageView
-        android:id="@+id/item_image"
+    <RelativeLayout
+        android:id="@+id/image_tinder"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop" />
+        android:layout_height="match_parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/item_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:riv_corner_radius="@dimen/_8sdp" />
+    </RelativeLayout>
+
 
     <LinearLayout
 
@@ -173,71 +180,112 @@
     </FrameLayout>
 
     <LinearLayout
+
         android:id="@+id/infor_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="vertical"
-        android:padding="16dp"
+        android:padding="10dp"
         android:weightSum="2"
         >
-
         <LinearLayout
+            android:layout_marginBottom="@dimen/_5sdp"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1">
+
             <TextView
-                android:id="@+id/item_name2"
+                android:id="@+id/item_name1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:text="Hieeus Thành"
-                android:textColor="@android:color/white"
-                android:textSize="26sp"
+                android:text="Hieu Thanh"
+                android:textColor="#161515"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="3"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1">
-            <TextView
-                android:id="@+id/item_name3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:text="Hieeus Thành"
-                android:textColor="@android:color/white"
-                android:textSize="26sp"
-                android:textStyle="bold" />
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content">
+               <TextView
+                   android:id="@+id/item_adress1"
+                   android:layout_height="match_parent"
+                   android:layout_width="wrap_content"
+                   android:text="Hà Nội"
+                   android:textSize="16sp" />
+           </LinearLayout>
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/custom_gioitinh"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/girl1" />
+
+                <TextView
+                    android:id="@+id/item_age1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:text="14"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
+        <TextView
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="#63030303"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"/>
     </LinearLayout>
 
     <LinearLayout
+
+        android:id="@+id/status_tinder"
         android:layout_gravity="bottom"
         android:background="@drawable/gradation_black"
-        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_70sdp"
         android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="3">
 
         <ImageView
-            android:layout_width="80dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="10dp"
             android:layout_height="100dp"
             android:layout_weight="1"
             android:background="@drawable/icon_thoat" />
 
         <ImageView
-            android:layout_width="80dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="10dp"
             android:layout_height="100dp"
             android:layout_weight="1"
             android:background="@drawable/tym" />
 
         <ImageView
-            android:layout_width="80dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="10dp"
             android:layout_height="100dp"
             android:layout_weight="1"
             android:background="@drawable/icon_no_tym" />
