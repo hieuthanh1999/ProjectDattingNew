@@ -13,16 +13,22 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.datting.Model.User_infor;
 import com.example.datting.R;
 import com.example.datting.Users.Information;
 import com.example.datting.Users.Setting;
 import com.example.datting.Users.Setting_Fragments;
 
+import java.util.ArrayList;
+
 public class User_Fragments extends Fragment {
 
     ImageView setting;
     TextView information;
+
 
     @Nullable
     @Override
@@ -34,8 +40,8 @@ public class User_Fragments extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        setting = view.findViewById(R.id.settings);
-        information = view.findViewById(R.id.information);
+        anhxa(view);
+
 
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +62,14 @@ public class User_Fragments extends Fragment {
                 startActivity(intent);
             }
         });
+    }
+    private void anhxa(View view)
+    {
+
+        setting = view.findViewById(R.id.settings);
+        information = view.findViewById(R.id.information);
+
+
     }
 
 }

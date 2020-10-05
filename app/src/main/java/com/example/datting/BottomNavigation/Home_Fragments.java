@@ -53,11 +53,13 @@ public class Home_Fragments extends Fragment {
     public  void data()
     {
         people = new ArrayList<>();
-        for(int i=0;i<3;i++)
+        for(int i=0;i<2;i++)
         {
+            people.add(new People("Nam Thần", R.drawable.nhung1, 18, "Ha Noi", R.drawable.online));
+            people.add(new People("Hiếu Thành ", R.drawable.nhung3, 20, "Đông Anh", R.drawable.online));
             people.add(new People("Nam Thần", R.drawable.thanhh, 18, "Ha Noi", R.drawable.online));
             people.add(new People("Hiếu Thành ", R.drawable.nhunglon, 20, "Đông Anh", R.drawable.online));
-            people.add(new People("Hồng Nhung", R.drawable.nhung12, 21, "Thanh Xuân", R.drawable.online));
+            people.add(new People("Hồng Nhung", R.drawable.nhugn2, 21, "Thanh Xuân", R.drawable.online));
             people.add(new People("Nam Đzai", R.drawable.nhungheo, 18, "Ha Noi", R.drawable.online));
         }
     }
