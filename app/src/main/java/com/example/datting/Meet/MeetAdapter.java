@@ -33,7 +33,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
     private ArrayList<Meet> meets;
     Context context;
     CardStackLayoutManager manager;
-
+    private  int dem = 1;
     public ArrayList<Meet> getMeets() {
         return meets;
     }
@@ -93,8 +93,27 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
 
                     manager.setSwipeableMethod(SwipeableMethod.None);
                     holder.linearLayout_infor.setVisibility(VISIBLE);
-                    holder.image_tinder.setPadding(0, 0, 0, 250 );
-                    //holder.image_tinder.setY(150);
+
+                    int height_infor = holder.status_infor.getHeight();
+                    holder.image_tinder.setPadding(0, 0, 0, height_infor + 50 );
+
+
+                    holder.xo_layout.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if(dem % 2 == 1)
+                            {
+                                holder.xo_layout.setImageResource(R.drawable.dow_metting);
+
+                            }
+                            else
+                            {
+                                holder.xo_layout.setImageResource(R.drawable.ic_share);
+                            }
+
+                            dem++;
+                        }
+                    });
 
 
                 } else {
@@ -126,7 +145,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
 
 
-        ImageView image;
+        ImageView image, xo_layout;
         TextView nama, usia, kota;
         CardView cardView;
         LinearLayout linearLayout;
@@ -145,6 +164,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
             status_infor = itemView.findViewById(R.id.status_tinder);
             linearLayout_infor = itemView.findViewById(R.id.infor_user);
             image_tinder = itemView.findViewById(R.id.image_tinder);
+            xo_layout = itemView.findViewById(R.id.xo_layout);
         }
 
         public void setData(Meet meet) {
