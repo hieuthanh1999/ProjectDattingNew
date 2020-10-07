@@ -1,6 +1,8 @@
 package com.example.datting.Meet;
 
+import android.app.Activity;
 import android.content.Context;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,8 +10,8 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -27,13 +29,16 @@ import com.yuyakaido.android.cardstackview.SwipeableMethod;
 
 import java.util.ArrayList;
 
+import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
 public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
     private ArrayList<Meet> meets;
     Context context;
+    boolean check= true;
     CardStackLayoutManager manager;
-    private  int dem = 1;
+    private int dem = 1;
+
     public ArrayList<Meet> getMeets() {
         return meets;
     }
@@ -61,78 +66,77 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
         final Meet meet = meets.get(position);
 
         holder.setData(meets.get(position));
-        holder.linearLayout.setVisibility(VISIBLE);
         holder.linearLayout_infor.setVisibility(View.GONE);
         holder.status_infor.setVisibility(VISIBLE);
-//        }
-//        else{
-//            holder.linearLayout.setVisibility(VISIBLE);
-//            holder.setData(meets.get(position));
-//        }
-
 
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
-                if (holder.linearLayout.getVisibility() == VISIBLE) {
-                    holder.status_infor.setVisibility(View.GONE);
-                    holder.linearLayout.setVisibility(View.GONE);
-//                    manager.setSwipeableMethod(SwipeableMethod.None);
-//                    manager.setStackFrom(StackFrom.None);
-////                    manager.setVisibleCount(3);
-//                  //  manager.setTranslationInterval(8.0f);
-//                    manager.setScaleInterval(0.4f);
-//                    manager.setSwipeThreshold(0.3f);
-//                    manager.setMaxDegree(20.0f);
-//                    manager.setDirections(Direction.HORIZONTAL);
-//                    manager.setCanScrollHorizontal(true);
-//                    manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
-//                    manager.setOverlayInterpolator(new LinearInterpolator());
-
-                    manager.setSwipeableMethod(SwipeableMethod.None);
-                    holder.linearLayout_infor.setVisibility(VISIBLE);
-
-                    int height_infor = holder.status_infor.getHeight();
-                    holder.image_tinder.setPadding(0, 0, 0, height_infor + 50 );
-
-
-                    holder.xo_layout.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            if(dem % 2 == 1)
-                            {
-                                holder.xo_layout.setImageResource(R.drawable.dow_metting);
-
-                            }
-                            else
-                            {
-                                holder.xo_layout.setImageResource(R.drawable.ic_share);
-                            }
-
-                            dem++;
-                        }
-                    });
-
-
-                } else {
-                    holder.linearLayout.setVisibility(VISIBLE);
-                    manager.setSwipeableMethod(SwipeableMethod.None);
-                    manager.setStackFrom(StackFrom.None);
-//                    manager.setVisibleCount(3);
-                    //  manager.setTranslationInterval(8.0f);
-                    manager.setScaleInterval(0.4f);
-                    manager.setSwipeThreshold(0.3f);
-                    manager.setMaxDegree(20.0f);
-                    manager.setDirections(Direction.HORIZONTAL);
-                    manager.setCanScrollHorizontal(true);
-                    manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
-                    manager.setOverlayInterpolator(new LinearInterpolator());
-
+//                if (holder.linearLayout.getVisibility() == VISIBLE) {
+//
+//                manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
+                holder.status_infor.setVisibility(View.GONE);
+                holder.linearLayout.setVisibility(View.GONE);
+                holder.linearLayout_infor.setVisibility(VISIBLE);
+                if(check)
+                {
+                    holder.setSizeScreen(holder.image_tinder);
+                    check= false;
                 }
 
+                holder.xo_layout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (dem % 2 == 1) {
+
+                            holder.xo_layout.setImageResource(R.drawable.dow_metting);
+                            manager.setSwipeableMethod(SwipeableMethod.None);
+                            holder.about_me.setVisibility(View.VISIBLE);
+//                            holder.status_infor.setVisibility(View.GONE);
+                            if(holder.about_me.getVisibility() == VISIBLE)
+                            {
+                                holder.status_infor.setVisibility(View.VISIBLE);
+                            }
+
+                        } else {
+
+                            holder.xo_layout.setImageResource(R.drawable.ic_share);
+                            manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
+                            holder.about_me.setVisibility(View.GONE);
+                            holder.linearLayout.setVisibility(VISIBLE);
+                            holder.linearLayout_infor.setVisibility(View.GONE);
+                            holder.status_infor.setVisibility(View.VISIBLE);
+                            if(check == false)
+                            {
+                                holder.getSizeScreen(holder.image_tinder);
+                                check= true;
+                            }
+
+                        }
+
+                        dem++;
+                    }
+                });
+
+
+//                } else {
+                manager.setSwipeableMethod(SwipeableMethod.None);
+                manager.setStackFrom(StackFrom.None);
+//                    manager.setVisibleCount(3);
+                //  manager.setTranslationInterval(8.0f);
+                manager.setScaleInterval(0.4f);
+                manager.setSwipeThreshold(0.3f);
+                manager.setMaxDegree(20.0f);
+                manager.setDirections(Direction.HORIZONTAL);
+                manager.setCanScrollHorizontal(true);
+                manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
+                manager.setOverlayInterpolator(new LinearInterpolator());
+
             }
+
+//            }
         });
     }
 
@@ -148,9 +152,10 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
         ImageView image, xo_layout;
         TextView nama, usia, kota;
         CardView cardView;
-        LinearLayout linearLayout;
+        LinearLayout linearLayout, linear_tong;
         LinearLayout linearLayout_infor, status_infor;
-        RelativeLayout image_tinder;
+        RelativeLayout image_tinder, about_me;
+        ScrollView scrollView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -165,6 +170,9 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
             linearLayout_infor = itemView.findViewById(R.id.infor_user);
             image_tinder = itemView.findViewById(R.id.image_tinder);
             xo_layout = itemView.findViewById(R.id.xo_layout);
+            scrollView = itemView.findViewById(R.id.scrollview);
+            linear_tong = itemView.findViewById(R.id.linearlayout_tong);
+            about_me = itemView.findViewById(R.id.about_me);
         }
 
         public void setData(Meet meet) {
@@ -173,8 +181,37 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
             nama.setText(meet.getName());
             usia.setText(meet.getAge());
             kota.setText(meet.getAdress());
-
         }
+
+
+        public void setSizeScreen(RelativeLayout layout) {
+
+
+            DisplayMetrics displaymetrics = new DisplayMetrics();
+            ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+//            //if you need three fix imageview in width
+//            int devicewidth = displaymetrics.widthPixels;
+            //if you need 4-5-6 anything fix imageview in height
+            int deviceheight = (displaymetrics.heightPixels) - (displaymetrics.heightPixels) / 3 - 60;
+            // layout.getLayoutParams().width = devicewidth;
+            //if you need same height as width you can set devicewidth in holder.image_view.getLayoutParams().height
+            layout.getLayoutParams().height = deviceheight;
+        }
+        public void getSizeScreen(RelativeLayout layout) {
+
+
+            DisplayMetrics displaymetrics = new DisplayMetrics();
+            ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+//            //if you need three fix imageview in width
+//            int devicewidth = displaymetrics.widthPixels;
+            //if you need 4-5-6 anything fix imageview in height
+            int deviceheight = (displaymetrics.heightPixels) + (displaymetrics.heightPixels) / 3 + 60;
+            // layout.getLayoutParams().width = devicewidth;
+            //if you need same height as width you can set devicewidth in holder.image_view.getLayoutParams().height
+            layout.getLayoutParams().height = deviceheight;
+        }
+
+
     }
 
 }

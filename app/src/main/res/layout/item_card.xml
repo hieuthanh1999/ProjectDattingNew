@@ -4,27 +4,148 @@
     android:id="@+id/cardview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffff"
     android:foreground="?attr/selectableItemBackground"
-    android:background ="#ffff"
     android:outlineSpotShadowColor="#ffff"
     app:cardPreventCornerOverlap="false"
     app:cardUseCompatPadding="true">
 
-<!--    <ScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
 
+    <!--layout chung-->
     <RelativeLayout
-        android:id="@+id/image_tinder"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/item_image"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            app:riv_corner_radius="@dimen/_8sdp" />
+            android:fillViewport="true">
+            <!--  layout anh va layoutmo rong-->
+            <LinearLayout
+                android:id="@+id/linearlayout_tong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/image_tinder"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/item_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        app:riv_corner_radius="@dimen/_8sdp" />
+                </RelativeLayout>
+
+                <!--  layoutmo rong
+               -->
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:id="@+id/infor_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/item_name1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:text="Hieu Thanh"
+                                android:textColor="#161515"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:paddingRight="@dimen/_10sdp">
+
+                            <ImageView
+                                android:id="@+id/xo_layout"
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:src="@drawable/ic_share" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/item_adress1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Hà Nội"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="50dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/custom_gioitinh"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <ImageView
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:background="@drawable/girl1" />
+
+                            <TextView
+                                android:id="@+id/item_age1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight="1"
+                                android:text="14"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                                    <include layout="@layout/about_me"  android:visibility="gone"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
 
         <FrameLayout
             android:id="@+id/right_overlay"
@@ -53,10 +174,10 @@
         android:weightSum="10">
 
         <LinearLayout
-            android:layout_marginBottom="@dimen/_80sdp"
             android:id="@+id/infor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_80sdp"
             android:layout_weight="4"
             android:orientation="vertical"
             android:weightSum="4">
@@ -180,151 +301,161 @@
 
     <!--    </FrameLayout>-->
 
+    <!--  <LinearLayout
+          android:id="@+id/infor_user"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="bottom"
+          android:orientation="vertical"
+          android:padding="10dp"
+          android:weightSum="2">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginBottom="@dimen/_5sdp"
+              android:layout_weight="1"
+              android:orientation="horizontal"
+              android:weightSum="2">
+
+              <LinearLayout
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="1">
+
+                  <TextView
+                      android:id="@+id/item_name1"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_gravity="center"
+                      android:text="Hieu Thanh"
+                      android:textColor="#161515"
+                      android:textSize="22sp"
+                      android:textStyle="bold" />
+              </LinearLayout>
+
+              <LinearLayout
+
+                  android:layout_width="0dp"
+                  android:layout_height="match_parent"
+                  android:layout_weight="1"
+                  android:gravity="right"
+                  android:paddingRight="@dimen/_10sdp">
+
+                  <ImageView
+                      android:id="@+id/xo_layout"
+                      android:layout_width="@dimen/_20sdp"
+                      android:layout_height="@dimen/_20sdp"
+                      android:src="@drawable/ic_share" />
+              </LinearLayout>
+
+          </LinearLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:orientation="horizontal"
+              android:weightSum="3">
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
+
+                  <TextView
+                      android:id="@+id/item_adress1"
+                      android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:text="Hà Nội"
+                      android:textSize="16sp" />
+              </LinearLayout>
+
+              <LinearLayout
+                  android:layout_width="50dp"
+                  android:layout_height="15dp"
+                  android:layout_gravity="center_vertical"
+                  android:layout_marginLeft="10dp"
+                  android:background="@drawable/custom_gioitinh"
+                  android:orientation="horizontal"
+                  android:weightSum="2">
+
+                  <ImageView
+                      android:layout_width="12dp"
+                      android:layout_height="12dp"
+                      android:layout_gravity="center"
+                      android:layout_marginLeft="5dp"
+                      android:background="@drawable/girl1" />
+
+                  <TextView
+                      android:id="@+id/item_age1"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_marginLeft="8dp"
+                      android:layout_weight="1"
+                      android:text="14"
+                      android:textColor="@android:color/white"
+                      android:textSize="12sp"
+                      android:textStyle="bold" />
+              </LinearLayout>
+          </LinearLayout>-->
+
+    <!-- <TextView
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/_1sdp"
+         android:layout_marginTop="@dimen/_10sdp"
+         android:background="#63030303" />
+ -->
+
     <LinearLayout
-        android:id="@+id/infor_user"
+        android:id="@+id/status_tinder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:weightSum="2"
-        >
-        <LinearLayout
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-            <LinearLayout
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-                <TextView
-                    android:id="@+id/item_name1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:text="Hieu Thanh"
-                    android:textColor="#161515"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-            <LinearLayout
-
-                android:paddingRight="@dimen/_10sdp"
-                android:gravity="right"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-             <ImageView
-                 android:id="@+id/xo_layout"
-                 android:src="@drawable/ic_share"
-                 android:layout_width="@dimen/_20sdp"
-                 android:layout_height="@dimen/_20sdp"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:weightSum="3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-           <LinearLayout
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content">
-               <TextView
-                   android:id="@+id/item_adress1"
-                   android:layout_height="match_parent"
-                   android:layout_width="wrap_content"
-                   android:text="Hà Nội"
-                   android:textSize="16sp" />
-           </LinearLayout>
-            <LinearLayout
-                android:layout_width="50dp"
-                android:layout_height="15dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/custom_gioitinh"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <ImageView
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/girl1" />
-
-                <TextView
-                    android:id="@+id/item_age1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_weight="1"
-                    android:text="14"
-                    android:textColor="@android:color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
-        <TextView
-            android:layout_marginTop="@dimen/_10sdp"
-            android:background="#63030303"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_1sdp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:visibility="gone"
-        android:id="@+id/status_tinder"
-        android:layout_gravity="bottom"
         android:background="@drawable/gradation_black"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_70sdp"
         android:gravity="center"
         android:orientation="horizontal"
+        android:visibility="gone"
         android:weightSum="3">
+
         <LinearLayout
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_marginTop="15dp"
                 android:layout_width="@dimen/_90sdp"
                 android:layout_height="@dimen/_80sdp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/icon_thoat" />
 
         </LinearLayout>
+
         <LinearLayout
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_marginTop="15dp"
                 android:layout_width="@dimen/_90sdp"
                 android:layout_height="@dimen/_80sdp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/tym" />
 
         </LinearLayout>
+
         <LinearLayout
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_marginTop="15dp"
                 android:layout_width="@dimen/_90sdp"
                 android:layout_height="@dimen/_80sdp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/icon_no_tym" />
 
         </LinearLayout>
 
-
-
-
-
     </LinearLayout>
-<!--    </ScrollView>-->
+
 </androidx.cardview.widget.CardView>
