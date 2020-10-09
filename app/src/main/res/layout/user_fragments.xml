@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ffffff"
     android:orientation="vertical"
     android:weightSum="20">
@@ -50,50 +52,48 @@
     android:layout_weight="19"
     android:layout_width="match_parent"
     android:layout_height="0dp">
-    <LinearLayout
+    <RelativeLayout
+
+        android:id="@+id/rela1"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="170dp"
-            android:layout_height="170dp"
-            android:layout_gravity="center"
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/image_hoso"
+            android:layout_below="@id/rela1"
+            app:riv_corner_radius="@dimen/_100sdp"
+            android:scaleType="centerCrop"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:src="@drawable/nhung4"
-            android:layout_marginTop="@dimen/_5sdp"/>
+            android:layout_marginTop="@dimen/_5sdp"
+            tools:ignore="NotSibling" />
 
-        <LinearLayout
+        <RelativeLayout
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_below="@id/image_hoso"
+            android:id="@+id/user_infor"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:weightSum="2">
-
-            <LinearLayout
-                android:layout_marginTop="@dimen/_5sdp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="4">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="140dp"
-                    android:layout_weight="2"
-                    android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
                     <TextView
+
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/user_infor"
+                        android:id="@+id/user_hoso"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="right"
+                        android:layout_height="wrap_content"
                         android:text="Hiếu Thành"
                         android:textColor="#000000"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:ignore="NotSibling" />
 
                     <TextView
+                        android:id="@+id/dauphay3"
+                        android:layout_toRightOf="@id/user_hoso"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=","
@@ -102,33 +102,34 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/age_hoso"
+                        android:layout_toRightOf="@id/dauphay3"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="18"
                         android:textColor="#000000"
                         android:textSize="18sp"
                         android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
 
-            <LinearLayout
+            <RelativeLayout
+
+                android:layout_below="@id/age_hoso"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1">
-
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
                 <TextView
                     android:id="@+id/information"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:layout_centerHorizontal="true"
                     android:text="Chọn ảnh để xem hồ sơ của bạn"
                     android:textStyle="bold" />
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
 
     <LinearLayout
+        android:layout_marginTop="@dimen/_60sdp"
         android:weightSum="5"
         android:orientation="vertical"
         android:layout_width="match_parent"

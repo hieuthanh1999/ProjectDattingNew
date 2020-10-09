@@ -78,16 +78,18 @@
                     android:weightSum="3">
 
                     <LinearLayout
-
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
-                        android:paddingTop="5dp">
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingLeft="@dimen/_5sdp"
+                     >
 
                         <com.makeramen.roundedimageview.RoundedImageView
+                            android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@drawable/nhung5"
+                            android:src="@drawable/nhung12"
                             app:riv_corner_radius="@dimen/_8sdp" />
                     </LinearLayout>
 
@@ -99,30 +101,36 @@
                         android:weightSum="2">
 
                         <LinearLayout
-
+                            android:paddingLeft="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:paddingRight="@dimen/_5sdp"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:paddingTop="@dimen/_5sdp">
+                            >
 
                             <com.makeramen.roundedimageview.RoundedImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
                                 android:src="@drawable/nhung5"
                                 app:riv_corner_radius="@dimen/_8sdp" />
                         </LinearLayout>
 
                         <LinearLayout
+                            android:paddingLeft="@dimen/_5sdp"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:paddingTop="@dimen/_5sdp">
+                            android:paddingTop="@dimen/_5sdp"
+                            android:paddingRight="@dimen/_5sdp">
 
                             <com.makeramen.roundedimageview.RoundedImageView
+                                android:scaleType="centerCrop"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:src="@drawable/nhung5"
-                                app:riv_corner_radius="@dimen/_10sdp" />
+                                app:riv_corner_radius="@dimen/_8sdp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -130,7 +138,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:layout_weight="1"
                     android:orientation="horizontal"
                     android:weightSum="3">
@@ -138,26 +146,12 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="0.97"
+                        android:layout_weight="1"
                         android:paddingLeft="@dimen/_5sdp"
                         android:paddingBottom="@dimen/_5sdp">
 
                         <com.makeramen.roundedimageview.RoundedImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/nhung5"
-                            app:riv_corner_radius="@dimen/_8sdp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.97"
-                        android:paddingLeft="@dimen/_5sdp"
-                        android:paddingBottom="@dimen/_5sdp">
-
-
-                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/nhung5"
@@ -168,12 +162,29 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_5sdp">
+
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:scaleType="centerCrop"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/nhung5"
+                            app:riv_corner_radius="@dimen/_8sdp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingRight="@dimen/_5sdp"
+                        android:paddingLeft="@dimen/_5sdp"
                         android:paddingBottom="@dimen/_5sdp">
 
                         <com.makeramen.roundedimageview.RoundedImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
                             android:src="@drawable/nhung5"
                             app:riv_corner_radius="@dimen/_8sdp" />
                     </LinearLayout>

@@ -1,11 +1,13 @@
 package com.example.datting.BottomNavigation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DiffUtil;
 
 import com.example.datting.Meet.CardStackCallback;
+import com.example.datting.Meet.ChonlocActivity;
 import com.example.datting.Meet.MeetAdapter;
 import com.example.datting.Model.Meet;
 import com.example.datting.R;
@@ -34,6 +37,8 @@ public class Meet_Fragments extends Fragment {
     private CardStackLayoutManager manager;
     private MeetAdapter adapter;
     private TextView tv;
+    private CardStackView cardStackView;
+    private ImageView chonloc;
     ArrayList<Meet> meets = new ArrayList<>();
 
     @Nullable
@@ -46,10 +51,20 @@ public class Meet_Fragments extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         super.onViewCreated(view, savedInstanceState);
+
+        chonloc = view.findViewById(R.id.chonloc);
         addList();
 
-        CardStackView cardStackView = view.findViewById(R.id.CardStackView);
+        chonloc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), ChonlocActivity.class));
+            }
+        });
 
+
+        CardStackView cardStackView = view.findViewById(R.id.CardStackView);
+        cardStackView.rewind();
         manager = new CardStackLayoutManager(getContext(), new CardStackListener() {
             @Override
             public void onCardDragging(Direction direction, float ratio) {
@@ -95,20 +110,15 @@ public class Meet_Fragments extends Fragment {
             public void onCardAppeared(View view, int position) {
                 tv = view.findViewById(R.id.item_name);
                 Log.d(TAG, "onCardAppeared: " + position + ", nama: " + tv.getText());
-                if (meets != null)
-                {
-                    addList();
-                }
-                else {
-                    addList();
-                }
-               }
+                //addList();
+            }
 
             @Override
             public void onCardDisappeared(View view, int position) {
                 tv = view.findViewById(R.id.item_name);
                 Log.d(TAG, "onCardAppeared: " + position + ", nama: " + tv.getText());
-                addList();
+               // addList();
+
             }
         });
         //

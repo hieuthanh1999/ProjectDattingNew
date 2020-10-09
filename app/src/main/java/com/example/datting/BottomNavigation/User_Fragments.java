@@ -21,13 +21,14 @@ import com.example.datting.R;
 import com.example.datting.Users.Information;
 import com.example.datting.Users.Setting;
 import com.example.datting.Users.Setting_Fragments;
+import com.example.datting.Users.TaiKhoan_Activity;
 
 import java.util.ArrayList;
 
 public class User_Fragments extends Fragment {
 
-    ImageView setting;
-    TextView information;
+    ImageView setting, image_hoso;
+    TextView information, user_hoso;
     ImageView abc;
 
     @Nullable
@@ -41,7 +42,7 @@ public class User_Fragments extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         anhxa(view);
-
+        edit_user();
 
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,8 +55,7 @@ public class User_Fragments extends Fragment {
             }
         });
 
-
-        information.setOnClickListener(new View.OnClickListener() {
+        image_hoso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), Information.class);
@@ -63,13 +63,20 @@ public class User_Fragments extends Fragment {
             }
         });
     }
+        private void edit_user()
+    {
+       user_hoso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext() , TaiKhoan_Activity.class));
+            }
+        });
+    }
     private void anhxa(View view)
     {
-
+        image_hoso = view.findViewById(R.id.image_hoso);
+        user_hoso = view.findViewById(R.id.user_hoso);
         setting = view.findViewById(R.id.settings);
         information = view.findViewById(R.id.information);
-
-
     }
-
 }

@@ -5,7 +5,6 @@
     android:layout_marginTop="@dimen/_10sdp"
     android:id="@+id/about_me"
 >
-
     <RelativeLayout
         android:id="@+id/about_me2"
         android:layout_width="match_parent"

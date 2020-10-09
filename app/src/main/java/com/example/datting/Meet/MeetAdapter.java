@@ -35,7 +35,7 @@ import static android.view.View.VISIBLE;
 public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
     private ArrayList<Meet> meets;
     Context context;
-    boolean check= true;
+    boolean check = true;
     CardStackLayoutManager manager;
     private int dem = 1;
 
@@ -73,17 +73,13 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
             @Override
             public void onClick(View view) {
 
-
-//                if (holder.linearLayout.getVisibility() == VISIBLE) {
-//
-//                manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
                 holder.status_infor.setVisibility(View.GONE);
                 holder.linearLayout.setVisibility(View.GONE);
                 holder.linearLayout_infor.setVisibility(VISIBLE);
-                if(check)
-                {
+
+                if (check) {
                     holder.setSizeScreen(holder.image_tinder);
-                    check= false;
+                    check = false;
                 }
 
                 holder.xo_layout.setOnClickListener(new View.OnClickListener() {
@@ -94,24 +90,36 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
                             holder.xo_layout.setImageResource(R.drawable.dow_metting);
                             manager.setSwipeableMethod(SwipeableMethod.None);
                             holder.about_me.setVisibility(View.VISIBLE);
-//                            holder.status_infor.setVisibility(View.GONE);
-                            if(holder.about_me.getVisibility() == VISIBLE)
-                            {
-                                holder.status_infor.setVisibility(View.VISIBLE);
-                            }
+                            holder.status_infor.setVisibility(View.GONE);
+
+//                            if(holder.about_me.getVisibility() == VISIBLE)
+//                            {
+//                                holder.status_infor.setVisibility(View.VISIBLE);
+//                            }
 
                         } else {
 
                             holder.xo_layout.setImageResource(R.drawable.ic_share);
-                            manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
+                            //manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
                             holder.about_me.setVisibility(View.GONE);
-                            holder.linearLayout.setVisibility(VISIBLE);
-                            holder.linearLayout_infor.setVisibility(View.GONE);
-                            holder.status_infor.setVisibility(View.VISIBLE);
-                            if(check == false)
-                            {
-                                holder.getSizeScreen(holder.image_tinder);
-                                check= true;
+                            holder.linearLayout.setVisibility(View.GONE);
+                            holder.linearLayout_infor.setVisibility(View.VISIBLE);
+
+                            if(holder.about_me.getVisibility() ==  View.GONE) {
+                                holder.image.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        holder.linearLayout_infor.setVisibility(View.GONE);
+
+                                        if (check == false) {
+                                            holder.getSizeScreen(holder.image_tinder);
+                                            check = true;
+                                            manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
+                                            holder.linearLayout.setVisibility(VISIBLE);
+                                            holder.status_infor.setVisibility(View.VISIBLE);
+                                        }
+                                    }
+                                });
                             }
 
                         }
@@ -119,10 +127,6 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
                         dem++;
                     }
                 });
-
-
-//                } else {
-                manager.setSwipeableMethod(SwipeableMethod.None);
                 manager.setStackFrom(StackFrom.None);
 //                    manager.setVisibleCount(3);
                 //  manager.setTranslationInterval(8.0f);
@@ -131,7 +135,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
                 manager.setMaxDegree(20.0f);
                 manager.setDirections(Direction.HORIZONTAL);
                 manager.setCanScrollHorizontal(true);
-                manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
+                manager.setSwipeableMethod(SwipeableMethod.None);
                 manager.setOverlayInterpolator(new LinearInterpolator());
 
             }
@@ -197,6 +201,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
             //if you need same height as width you can set devicewidth in holder.image_view.getLayoutParams().height
             layout.getLayoutParams().height = deviceheight;
         }
+
         public void getSizeScreen(RelativeLayout layout) {
 
 

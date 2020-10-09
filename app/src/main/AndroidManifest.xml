@@ -14,21 +14,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".Users.Information"></activity>
-        <activity android:name=".Users.Setting" />
-        <activity android:name=".BottomNavigation_Activity">
+        <activity android:name=".Users.TaiKhoan_Activity">
 
         </activity>
+        <activity android:name=".Meet.ChonlocActivity" />
+        <activity android:name=".Users.Information" />
+        <activity android:name=".Users.Setting" />
+        <activity android:name=".BottomNavigation_Activity" />
         <activity android:name=".Chat.MessageActivity" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>
