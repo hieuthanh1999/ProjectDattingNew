@@ -91,6 +91,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
                             manager.setSwipeableMethod(SwipeableMethod.None);
                             holder.about_me.setVisibility(View.VISIBLE);
                             holder.status_infor.setVisibility(View.GONE);
+                            holder.status_infor.setVisibility(VISIBLE);
 
 //                            if(holder.about_me.getVisibility() == VISIBLE)
 //                            {

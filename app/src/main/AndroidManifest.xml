@@ -14,12 +14,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Users.TaiKhoan_Activity">
-
-        </activity>
+        <activity android:name=".Users.BottomSheets_User_Activity"></activity>
+        <activity android:name=".Users.Language_Activity" />
+        <activity android:name=".Users.Smoking_Activity" />
+        <activity android:name=".Users.Alcohol_Activity" />
+        <activity android:name=".Users.Weight_Activity" />
+        <activity android:name=".Users.Height_Activity" />
+        <activity android:name=".Users.AboutMe_Activity" />
+        <activity android:name=".Users.Work_Activity" />
+        <activity android:name=".Users.TaiKhoan_Activity" />
         <activity android:name=".Meet.ChonlocActivity" />
-        <activity android:name=".Users.Information" />
-        <activity android:name=".Users.Setting" />
+        <activity android:name=".Users.Information_Activity" />
+        <activity android:name=".Users.Setting_Activity" />
         <activity android:name=".BottomNavigation_Activity" />
         <activity android:name=".Chat.MessageActivity" />
         <activity android:name=".MainActivity">

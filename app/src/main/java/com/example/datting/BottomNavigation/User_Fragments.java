@@ -11,19 +11,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.datting.Model.User_infor;
 import com.example.datting.R;
-import com.example.datting.Users.Information;
-import com.example.datting.Users.Setting;
+import com.example.datting.Users.Information_Activity;
 import com.example.datting.Users.Setting_Fragments;
 import com.example.datting.Users.TaiKhoan_Activity;
-
-import java.util.ArrayList;
 
 public class User_Fragments extends Fragment {
 
@@ -44,6 +36,10 @@ public class User_Fragments extends Fragment {
         anhxa(view);
         edit_user();
 
+       // Intent intent =
+
+
+
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +54,7 @@ public class User_Fragments extends Fragment {
         image_hoso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), Information.class);
+                Intent intent = new Intent(getContext(), Information_Activity.class);
                 startActivity(intent);
             }
         });

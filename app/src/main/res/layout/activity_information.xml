@@ -192,12 +192,13 @@
             </LinearLayout>
 
             <RelativeLayout
+
                 android:id="@+id/sum_infor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/sum_image"
                 android:layout_marginLeft="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_5sdp">
 
                 <RelativeLayout
@@ -235,6 +236,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+
                     android:id="@+id/info_adress"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -270,6 +272,7 @@
 
 
             <RelativeLayout
+                android:layout_marginTop="@dimen/_10sdp"
                 android:id="@+id/sum_info1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -313,6 +316,7 @@
 
 
             <RelativeLayout
+                android:layout_marginTop="@dimen/_10sdp"
                 android:id="@+id/sum_info2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -348,6 +352,8 @@
                         android:id="@+id/cong_viec"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="0dp"
                         android:text="Thêm"
                         android:textColor="#ff69b4"
                         android:textSize="16sp" />
@@ -355,17 +361,19 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_3sdp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@id/them_1"
-                    android:visibility="gone"
                     tools:ignore="NotSibling">
 
                     <TextView
+                        android:visibility="gone"
+                        android:text="jiji"
                         android:id="@+id/hoc_van"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:text="Thêm"
                         android:textSize="16sp" />
 
                 </RelativeLayout>
@@ -414,6 +422,7 @@
             </RelativeLayout>
 
             <TextView
+                android:layout_marginTop="@dimen/_10sdp"
                 android:id="@+id/thanhngang1"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"

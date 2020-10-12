@@ -65,6 +65,7 @@ public class Meet_Fragments extends Fragment {
 
         CardStackView cardStackView = view.findViewById(R.id.CardStackView);
         cardStackView.rewind();
+
         manager = new CardStackLayoutManager(getContext(), new CardStackListener() {
             @Override
             public void onCardDragging(Direction direction, float ratio) {
@@ -142,6 +143,7 @@ public class Meet_Fragments extends Fragment {
     }
 
     private void addList() {
+
 
         meets.add(new Meet(R.drawable.nhung5, "Ji Soo", "25", "Korea"));
         meets.add(new Meet(R.drawable.thanhh, "Hieu Thanh", "25", "Korea"));

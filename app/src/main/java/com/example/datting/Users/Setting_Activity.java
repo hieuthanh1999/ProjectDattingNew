@@ -8,7 +8,7 @@ import android.widget.ImageView;
 
 import com.example.datting.R;
 
-public class Setting extends AppCompatActivity {
+public class Setting_Activity extends AppCompatActivity {
     ImageView cancel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
