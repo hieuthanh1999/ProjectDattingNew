@@ -48,7 +48,7 @@
             <TextView
                 android:textColor="#f96e91"
                 android:textSize="20sp"
-                android:id="@+id/save_user"
+                android:id="@+id/save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lưu" />
@@ -77,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/tencongty_edit"
+            android:id="@+id/about_me_edit"
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_below="@id/tencongty_text"
             android:hint="Giới thiệu về bản bạn"

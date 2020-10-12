@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="match_parent"
+<RelativeLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:background="#ffff"
     android:weightSum="20"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
+        android:id="@+id/thanhngang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -44,10 +45,10 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_weight="19"
+    <RelativeLayout
+        android:layout_below="@id/thanhngang"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="match_parent">
         <com.yuyakaido.android.cardstackview.CardStackView
             android:id="@+id/CardStackView"
             android:layout_width="match_parent"
@@ -55,5 +56,5 @@
             android:padding="8dp"
             android:clipToPadding="false"
             />
-    </LinearLayout>
-</LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

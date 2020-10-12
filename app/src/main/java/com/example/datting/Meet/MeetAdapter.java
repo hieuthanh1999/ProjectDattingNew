@@ -90,8 +90,8 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
                             holder.xo_layout.setImageResource(R.drawable.dow_metting);
                             manager.setSwipeableMethod(SwipeableMethod.None);
                             holder.about_me.setVisibility(View.VISIBLE);
-                            holder.status_infor.setVisibility(View.GONE);
                             holder.status_infor.setVisibility(VISIBLE);
+
 
 //                            if(holder.about_me.getVisibility() == VISIBLE)
 //                            {
@@ -99,7 +99,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
 //                            }
 
                         } else {
-
+                            holder.status_infor.setVisibility(View.GONE);
                             holder.xo_layout.setImageResource(R.drawable.ic_share);
                             //manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
                             holder.about_me.setVisibility(View.GONE);
@@ -115,6 +115,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
                                         if (check == false) {
                                             holder.getSizeScreen(holder.image_tinder);
                                             check = true;
+
                                             manager.setSwipeableMethod(SwipeableMethod.AutomaticAndManual);
                                             holder.linearLayout.setVisibility(VISIBLE);
                                             holder.status_infor.setVisibility(View.VISIBLE);

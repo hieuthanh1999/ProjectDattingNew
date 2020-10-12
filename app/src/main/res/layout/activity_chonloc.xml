@@ -189,6 +189,7 @@
                 app:data_type="_integer"
                 app:max_value="80"
                 app:min_value="16"
+                android:thumb="@drawable/custom_rangeseekbar"
                 app:bar_highlight_color="#fc826d"
                 android:id="@+id/rangeSeekbar1"
                 android:layout_width="match_parent"
@@ -246,6 +247,7 @@
         android:layout_weight="1">
 
         <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+            android:thumb="@drawable/custom_rangeseekbar"
             app:data_type="_integer"
             app:max_value="80"
             app:min_value="16"

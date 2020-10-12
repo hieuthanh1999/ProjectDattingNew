@@ -304,7 +304,7 @@
                     tools:ignore="NotSibling">
 
                     <TextView
-                        android:id="@+id/ket_ban_moi"
+                        android:id="@+id/bottom_sheet_user"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="Thêm"
@@ -361,7 +361,6 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:layout_marginTop="@dimen/_10sdp"
                     android:layout_marginLeft="@dimen/_3sdp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -369,8 +368,6 @@
                     tools:ignore="NotSibling">
 
                     <TextView
-                        android:visibility="gone"
-                        android:text="jiji"
                         android:id="@+id/hoc_van"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -381,6 +378,7 @@
 
 
             <RelativeLayout
+                android:layout_marginTop="@dimen/_10sdp"
                 android:id="@+id/sum_info3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -457,6 +455,7 @@
                         android:layout_weight="6">
 
                         <TextView
+
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
@@ -473,12 +472,10 @@
                         android:layout_weight="3">
 
                         <TextView
+                            android:id="@+id/height_txt"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:gravity="right"
-                            android:paddingTop="@dimen/_15sdp"
-                            android:text="170 cm"
+                            android:gravity="center"
                             android:textSize="@dimen/_14sdp" />
                     </LinearLayout>
 
@@ -540,13 +537,11 @@
                         android:layout_weight="3">
 
                         <TextView
+                            android:id="@+id/weight_txt"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:gravity="right"
-                            android:paddingTop="@dimen/_15sdp"
-                            android:text="60 kg"
-                            android:textSize="@dimen/_14sdp" />
+                            android:gravity="center"
+                            android:textSize="@dimen/_14sdp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -609,11 +604,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:gravity="right"
-                            android:paddingTop="@dimen/_15sdp"
-                            android:text="Không"
-                            android:textSize="@dimen/_14sdp" />
+                            android:gravity="center"
+                            android:textSize="@dimen/_14sdp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -676,10 +668,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:gravity="right"
-                            android:paddingTop="@dimen/_15sdp"
-                            android:text="Không"
+                            android:gravity="center"
                             android:textSize="@dimen/_14sdp" />
                     </LinearLayout>
 
@@ -743,11 +732,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:gravity="right"
-                            android:paddingTop="@dimen/_15sdp"
-                            android:text="Không"
-                            android:textSize="@dimen/_14sdp" />
+                            android:gravity="center"
+                            android:textSize="@dimen/_14sdp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -809,10 +795,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:gravity="right"
-                            android:paddingTop="@dimen/_15sdp"
-                            android:text="Hà Nội"
+                            android:gravity="center"
                             android:textSize="@dimen/_14sdp" />
                     </LinearLayout>
 
@@ -876,11 +859,8 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:gravity="right"
-                            android:paddingTop="@dimen/_15sdp"
-                            android:text="Không"
-                            android:textSize="@dimen/_14sdp" />
+                            android:gravity="center"
+                            android:textSize="@dimen/_14sdp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -944,10 +924,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_gravity="center"
-                            android:gravity="right"
-                            android:paddingTop="@dimen/_15sdp"
-                            android:text="Không"
+                            android:gravity="center"
                             android:textSize="@dimen/_14sdp" />
                     </LinearLayout>
 

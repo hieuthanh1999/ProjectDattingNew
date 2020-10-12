@@ -43,13 +43,6 @@ public class TaiKhoan_Activity extends AppCompatActivity {
                     name = user_edit.toString();
                     age = age_edit.toString();
 
-//                    Intent intent = new Intent(getBaseContext(), User_Fragments.class);
-//
-//                    intent.putExtra("name", name);
-//                    intent.putExtra("age", age);
-//
-//                    startActivity(intent);
-
 
                 }
             });
@@ -66,13 +59,8 @@ public class TaiKhoan_Activity extends AppCompatActivity {
                 else {
                     user_text.setTextColor(Color.parseColor("#d0d0d0"));
                 }
- 
-
-
             }
         });
-
-
 
         age_edit.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -89,20 +77,6 @@ public class TaiKhoan_Activity extends AppCompatActivity {
             }
         });
 
-//        user_edit.setOnHoverListener(new View.OnHoverListener() {
-//            @Override
-//            public boolean onHover(View v, MotionEvent event) {
-//                user_text.setTextColor(Color.RED);
-//                return false;
-//            }
-//        });
-//        user_edit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                user_text.setTextColor(Color.RED);
-//                //user_text.getResources().getColor(R.color.colorAccent);
-//            }
-//        });
     }
 
 
