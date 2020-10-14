@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     android:background="#ffff"
     android:foreground="?attr/selectableItemBackground"
-    android:outlineSpotShadowColor="#ffff"
     app:cardPreventCornerOverlap="false"
     app:cardUseCompatPadding="true">
 
@@ -23,6 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true">
+
             <!--  layout anh va layoutmo rong-->
             <LinearLayout
                 android:id="@+id/linearlayout_tong"
@@ -37,6 +37,7 @@
                     android:layout_height="match_parent">
 
                     <com.makeramen.roundedimageview.RoundedImageView
+                        android:adjustViewBounds="true"
                         android:id="@+id/item_image"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

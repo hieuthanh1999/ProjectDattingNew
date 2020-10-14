@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.example.datting.BottomNavigation.User_Fragments;
 import com.example.datting.R;
 
-public class TaiKhoan_Activity extends AppCompatActivity {
+public class User_Activity extends AppCompatActivity {
     ImageView cancel;
     TextView user_text, age_text;
     EditText user_edit, age_edit;

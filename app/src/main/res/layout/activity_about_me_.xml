@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Users.Work_Activity">
+    tools:context=".Users.Working_Activity">
     <LinearLayout
         android:background="#ffff"
         android:id="@+id/info"

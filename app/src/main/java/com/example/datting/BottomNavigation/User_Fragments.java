@@ -15,7 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.example.datting.R;
 import com.example.datting.Users.Information_Activity;
 import com.example.datting.Users.Setting_Fragments;
-import com.example.datting.Users.TaiKhoan_Activity;
+import com.example.datting.Users.User_Activity;
 
 public class User_Fragments extends Fragment {
 
@@ -64,7 +64,7 @@ public class User_Fragments extends Fragment {
        user_hoso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext() , TaiKhoan_Activity.class));
+                startActivity(new Intent(getContext() , User_Activity.class));
             }
         });
     }

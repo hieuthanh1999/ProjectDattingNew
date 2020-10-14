@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.example.datting.R;
 
-public class Work_Activity extends AppCompatActivity {
+public class Working_Activity extends AppCompatActivity {
     ImageView cancel;
     TextView congty_text, congviec_text, save;
     EditText congty_edit, congviec_edit;
@@ -37,7 +37,7 @@ public class Work_Activity extends AppCompatActivity {
                 congty = congty_edit.getText().toString();
                 congviec = congviec_edit.getText().toString();
 
-                Intent intent = new Intent(Work_Activity.this, Information_Activity.class);
+                Intent intent = new Intent(Working_Activity.this, Information_Activity.class);
                 intent.putExtra("check_working", 1);
                 intent.putExtra("congty", congty);
                 intent.putExtra("congviec", congviec);

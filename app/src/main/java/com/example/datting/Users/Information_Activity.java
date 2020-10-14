@@ -1,8 +1,6 @@
 package com.example.datting.Users;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,12 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.datting.Model.User_infor;
 import com.example.datting.R;
-
-import java.util.ArrayList;
 
 public class Information_Activity extends AppCompatActivity {
     ImageView cancel;
@@ -117,7 +111,7 @@ public class Information_Activity extends AppCompatActivity {
         cong_viec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Information_Activity.this, Work_Activity.class));
+                startActivity(new Intent(Information_Activity.this, Working_Activity.class));
             }
         });
         ve_ban.setOnClickListener(new View.OnClickListener() {
