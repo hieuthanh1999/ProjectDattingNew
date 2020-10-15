@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:id="@+id/bottonSheets"
+    android:id="@+id/bottonSheets2"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                         android:orientation="horizontal"
                         android:weightSum="2"
                         android:layout_width="50dp"
-                        android:layout_height="15dp">
+                        android:layout_height="20dp">
                         <ImageView
                             android:layout_marginLeft="5dp"
                             android:layout_gravity="center"
@@ -84,15 +84,15 @@
                             android:layout_width="12dp"
                             android:layout_height="12dp"/>
                         <TextView
-                            android:layout_marginLeft="8dp"
-                            android:layout_weight="1"
-                            android:text="14"
+                            android:padding="@dimen/_2sdp"
                             android:id="@+id/item_age"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:text="14"
                             android:textColor="@android:color/white"
-                            android:textSize="12sp"/>
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
                 </LinearLayout>
 

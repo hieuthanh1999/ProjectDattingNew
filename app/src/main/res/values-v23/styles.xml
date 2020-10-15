@@ -44,4 +44,25 @@
         <item name="colorAccent">#00a691</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
+    <style name="AppTheme_ruoubia" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#4a40ff</item>
+        <item name="colorPrimaryDark">#4a40ff</item>
+        <item name="colorAccent">#4a40ff</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+    <style name="AppTheme_hutthuoc" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#8d18ff</item>
+        <item name="colorPrimaryDark">#8d18ff</item>
+        <item name="colorAccent">#8d18ff</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+    <style name="AppTheme_ngongu" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#02885a</item>
+        <item name="colorPrimaryDark">#02885a</item>
+        <item name="colorAccent">#02885a</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 </resources>
