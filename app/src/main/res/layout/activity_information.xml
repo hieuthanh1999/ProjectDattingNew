@@ -198,7 +198,6 @@
             </LinearLayout>
 
             <RelativeLayout
-
                 android:id="@+id/sum_infor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -215,7 +214,7 @@
                     tools:ignore="NotSibling">
 
                     <TextView
-                        android:id="@+id/name_info"
+                        android:id="@+id/user_name"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="Hieu Thanh"
@@ -226,13 +225,13 @@
                         android:id="@+id/dauphay"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_toRightOf="@+id/name_info"
+                        android:layout_toRightOf="@+id/user_name"
                         android:text=", "
                         android:textColor="#090808"
                         android:textSize="22sp" />
 
                     <TextView
-                        android:id="@+id/age_info"
+                        android:id="@+id/user_age"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_toRightOf="@id/dauphay"
@@ -251,7 +250,7 @@
                     tools:ignore="NotSibling">
 
                     <TextView
-                        android:id="@+id/sex_info"
+                        android:id="@+id/user_sex"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:text="Nữ"
@@ -261,7 +260,7 @@
                         android:id="@+id/dauphay2"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_toRightOf="@+id/sex_info"
+                        android:layout_toRightOf="@+id/user_sex"
                         android:text=", "
                         android:textColor="#090808"
                         android:textSize="16sp" />

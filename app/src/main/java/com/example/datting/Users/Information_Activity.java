@@ -12,6 +12,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.datting.R;
@@ -21,11 +22,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Information_Activity extends AppCompatActivity {
+
     ImageView cancel;
-    TextView user_infor;
+    TextView user_name, user_age, user_sex;
+    String user_name1, user_age1, user_sex1;
     LinearLayout chieucao, cannang, ruoubia, hutthuoc, ngonngu;
+    RelativeLayout info;
     TextView cong_viec, hoc_van, ve_ban, height_txt, weight_txt, bottom_sheets;
-    int check_height, check_working, check_about, check_weight;
+    int check_height, check_working, check_about, check_weight, check_user;
     String height, weight;
     RoundedImageView image1, image2, image3, image4, image5, image6;
     private String selectedImagePath;
@@ -46,8 +50,27 @@ public class Information_Activity extends AppCompatActivity {
         setWeight_txt();
         bottom_sheets();
         select_image();
+        xuly_info();
 
 
+    }
+    private void  xuly_info()
+    {
+        Intent intent = getIntent();
+        check_user = intent.getIntExtra("check_user", 0);
+        user_name1 = intent.getStringExtra("user_name");
+        user_age1 = intent.getStringExtra("user_age");
+        user_sex1 = intent.getStringExtra("user_sex");
+        if (check_user == 1) {
+            user_name.setText(user_name1);
+            user_age.setText(user_age1);
+            user_sex.setText(user_sex1);
+        }
+        if (check_user == 0) {
+            user_name.setText("Hieu Thanhhh");
+            user_age.setText("20");
+            user_sex.setText("Nam");
+        }
     }
 
     private void select_image() {
@@ -107,8 +130,6 @@ public class Information_Activity extends AppCompatActivity {
         bitmap_image(4, image4, requestCode, resultCode, data);
         bitmap_image(5, image5, requestCode, resultCode, data);
         bitmap_image(6, image6, requestCode, resultCode, data);
-
-
     }
 
     private void bitmap_image(int SELECT_PICTURE, RoundedImageView image,int requestCode,int resultCode,  Intent data) {
@@ -196,6 +217,13 @@ public class Information_Activity extends AppCompatActivity {
     }
 
     private void Activity_Intent() {
+
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Information_Activity.this, User_Activity.class));
+            }
+        });
         cong_viec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -239,10 +267,17 @@ public class Information_Activity extends AppCompatActivity {
             }
         });
 
+
     }
 
     private void anhxa() {
 
+        //info
+        user_name = findViewById(R.id.user_name);
+        user_age = findViewById(R.id.user_age);
+        user_sex = findViewById(R.id.user_sex);
+
+        //UPload image
         image1 = findViewById(R.id.image1);
         image2 = findViewById(R.id.image2);
         image3 = findViewById(R.id.image3);
@@ -250,8 +285,9 @@ public class Information_Activity extends AppCompatActivity {
         image5 = findViewById(R.id.image5);
         image6 = findViewById(R.id.image6);
 
+        // toi o day de lam gi
         bottom_sheets = findViewById(R.id.bottom_sheet_user);
-
+        // activity can nang va chieu cao
         height_txt = findViewById(R.id.height_txt);
         weight_txt = findViewById(R.id.weight_txt);
 
@@ -266,7 +302,7 @@ public class Information_Activity extends AppCompatActivity {
         ngonngu = findViewById(R.id.ngonngu);
 
         //congviec_hocvan = findViewById(R.id.cong_viec);
-        //user_infor = findViewById(R.id.);
+        info = findViewById(R.id.sum_infor);
         cancel = findViewById(R.id.cancel);
     }
 
@@ -279,29 +315,4 @@ public class Information_Activity extends AppCompatActivity {
         });
     }
 
-
-//    /**
-//     * helper to retrieve the path of an image URI
-//     */
-//    public String getPath(Uri uri) {
-//        // just some safety built in
-//        if (uri == null) {
-//            // TODO perform some logging or show user feedback
-//            return null;
-//        }
-//        // try to retrieve the image from the media store first
-//        // this will only work for images selected from gallery
-//        String[] projection = {MediaStore.Images.Media.DATA};
-//        Cursor cursor = managedQuery(uri, projection, null, null, null);
-//        if (cursor != null) {
-//            int column_index = cursor
-//                    .getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-//            cursor.moveToFirst();
-//            String path = cursor.getString(column_index);
-//            cursor.close();
-//            return path;
-//        }
-//        // this is our fallback here
-//        return uri.getPath();
-//    }
 }

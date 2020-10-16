@@ -43,7 +43,7 @@ public class BottomSheets_Dialog extends BottomSheetDialogFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        relativeLayout = view.findViewById(R.id.bottonSheets2);
+        //relativeLayout = view.findViewById(R.id.bottonSheets2);
         radio_1 = view.findViewById(R.id.radioOne);
         radio_2 = view.findViewById(R.id.radioTwo);
         radio_3 = view.findViewById(R.id.radioThree);
@@ -54,7 +54,7 @@ public class BottomSheets_Dialog extends BottomSheetDialogFragment {
         radio_3.setOnCheckedChangeListener(checkedChangeListener);
         radio_4.setOnCheckedChangeListener(checkedChangeListener);
 
-        radioGroup = view.findViewById(R.id.radio_group);
+        //radioGroup = view.findViewById(R.id.radio_group);
 
 }
 

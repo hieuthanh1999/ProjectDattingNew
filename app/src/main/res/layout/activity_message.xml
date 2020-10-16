@@ -109,8 +109,7 @@
         android:layout_height="@dimen/_40sdp"
         android:layout_alignParentBottom="true"
         android:paddingBottom="10dp"
-        android:background="#ffff"
-        android:orientation="horizontal">
+        android:background="#ffff">
         <ImageView
             android:id="@+id/camera"
             android:layout_marginRight="10dp"
@@ -129,40 +128,38 @@
             android:layout_height="25dp"
             android:background="@drawable/dinhvi" />
 
-        <LinearLayout
+        <RelativeLayout
+            android:layout_marginTop="@dimen/_5sdp"
             android:layout_toRightOf="@id/vitri"
-            android:layout_marginLeft="0dp"
             android:layout_alignParentBottom="true"
-            android:weightSum="4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
             android:background="@drawable/custom_edittext"
             android:gravity="center">
 
             <EditText
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
+                android:layout_marginRight="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_alignParentBottom="true"
                 android:id="@+id/edit_message"
                 android:inputType="textMultiLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_weight="3"
                 android:background="#fafafa"
                 android:hint="Tin nhắn..."
                 />
 
             <Button
+                android:layout_alignParentRight="true"
                 android:id="@+id/publish"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_50sdp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:onClick="publish"
                 android:background="?attr/selectableItemBackground"
                 android:text="Gửi"
                 android:textColor="#ff69b4" />
-        </LinearLayout>
+        </RelativeLayout>
 
     </RelativeLayout>
 

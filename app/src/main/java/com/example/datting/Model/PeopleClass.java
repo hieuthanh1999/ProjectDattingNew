@@ -3,7 +3,7 @@ package com.example.datting.Model;
 public class PeopleClass {
     private String name;
     private int image;
-    private int image_status;
+    private boolean check_status;
     private String message;
     private String time;
     private int soluong;
@@ -13,10 +13,10 @@ public class PeopleClass {
         this.message = message;
     }
 
-    public PeopleClass(String name, int image, int image_status, String message, String time, int soluong) {
+    public PeopleClass(String name, int image, boolean check_status, String message, String time, int soluong) {
         this.name = name;
         this.image = image;
-        this.image_status = image_status;
+        this.check_status = check_status;
         this.message = message;
         this.time = time;
         this.soluong = soluong;
@@ -42,12 +42,12 @@ public class PeopleClass {
         this.image = image;
     }
 
-    public int getImage_status() {
-        return image_status;
+    public boolean isCheck_status() {
+        return check_status;
     }
 
-    public void setImage_status(int image_status) {
-        this.image_status = image_status;
+    public void setCheck_status(boolean check_status) {
+        this.check_status = check_status;
     }
 
     public String getName() {
