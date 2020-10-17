@@ -33,7 +33,7 @@ public class Chat_Fragments extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.chat_fragments,  container, false);
+        return inflater.inflate(R.layout.chat_fragments, container, false);
 
 
     }
@@ -53,46 +53,39 @@ public class Chat_Fragments extends Fragment {
 
     }
 
-    private  void data_mess()
-    {
+    private void data_mess() {
         people_mess = new ArrayList<>();
         people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.thanhh, true, "HIếu Thành anh đây", "16 phút", 4));
-        people_mess.add(new PeopleClass("Trường", R.drawable.nhunglon,true, "HIếu Thành pro", "16 phút", 6));
-//        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.thanhne,R.drawable.online, "HIếu Thành anh đây", "16 phút", 4));
-//        people_mess.add(new PeopleClass("Thành", R.drawable.ngoctrinh,R.drawable.online, "HIếu Thành pro", "20/7/2020", 0));
-//        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.ngoctrinh,R.drawable.online, "HIếu Thành anh đây", "02/02/2020", 5));
-//        people_mess.add(new PeopleClass("Kiên", R.drawable.ngoctrinh,R.drawable.online, "HIếu Thành pro", "22/5/2020", 2));
-//        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.thanhh,R.drawable.online, "HIếu Thành anh đây", "16 phút", 4));
-//        people_mess.add(new PeopleClass("Trường", R.drawable.nhunglon,R.drawable.online, "HIếu Thành pro", "16 phút", 6));
-//        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.thanhne,R.drawable.online, "HIếu Thành anh đây", "16 phút", 4));
-//        people_mess.add(new PeopleClass("Thành", R.drawable.ngoctrinh,R.drawable.online, "HIếu Thành pro", "20/7/2020", 0));
-//        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.ngoctrinh,R.drawable.online, "HIếu Thành anh đây", "02/02/2020", 5));
-//        people_mess.add(new PeopleClass("Kiên", R.drawable.ngoctrinh,R.drawable.online, "HIếu Thành pro", "22/5/2020", 2));
+        people_mess.add(new PeopleClass("Trường", R.drawable.nhunglon, true, "HIếu Thành pro", "16 phút", 6));
+        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.thanhne, false, "HIếu Thành anh đây", "16 phút", 4));
+        people_mess.add(new PeopleClass("Thành", R.drawable.ngoctrinh, false, "HIếu Thành pro", "20/7/2020", 0));
+        people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.ngoctrinh, true, "HIếu Thành anh đây", "02/02/2020", 0));
+        people_mess.add(new PeopleClass("Kiên", R.drawable.ngoctrinh, true, "HIếu Thành pro", "22/5/2020", 2));
     }
-    private void recycView_mess()
-    {
-        linearLayoutManager = new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL, false);
-        AdapterChat adapterMess = new AdapterChat( people_mess, this.getContext());
-        view_mess.setAdapter(adapterMess);
-        view_mess.setLayoutManager(linearLayoutManager);
+        private void recycView_mess ()
+        {
+            linearLayoutManager = new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL, false);
+            AdapterChat adapterMess = new AdapterChat(people_mess, this.getContext());
+            view_mess.setAdapter(adapterMess);
+            view_mess.setLayoutManager(linearLayoutManager);
 
-    }
-    private  void data_status()
-    {
-        people_status = new ArrayList<>();
-        people_status.add(new PeopleClass("Hiếu Thành", R.drawable.jisoo01));
-        people_status.add(new PeopleClass("Hạ Anh", R.drawable.ngoctrinh));
-        people_status.add(new PeopleClass("Hồng Nhung", R.drawable.thanhne));
-        people_status.add(new PeopleClass("Ngữ Yên", R.drawable.jisso));
-        people_status.add(new PeopleClass("Lee Nguyễn", R.drawable.thanhh));
-        people_status.add(new PeopleClass("Hương Phạm", R.drawable.nhunglon));
-    }
-    private void recycView_status()
-    {
+        }
+        private void data_status ()
+        {
+            people_status = new ArrayList<>();
+            people_status.add(new PeopleClass("Hiếu Thành", R.drawable.jisoo01));
+            people_status.add(new PeopleClass("Hạ Anh", R.drawable.ngoctrinh));
+            people_status.add(new PeopleClass("Hồng Nhung", R.drawable.thanhne));
+            people_status.add(new PeopleClass("Ngữ Yên", R.drawable.jisso));
+            people_status.add(new PeopleClass("Lee Nguyễn", R.drawable.thanhh));
+            people_status.add(new PeopleClass("Hương Phạm", R.drawable.nhunglon));
+        }
+        private void recycView_status ()
+        {
 
-        linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        AdapterStatus adapterChat = new AdapterStatus(people_status, getContext());
-        view_status.setAdapter(adapterChat);
-        view_status.setLayoutManager(linearLayoutManager);
+            linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+            AdapterStatus adapterChat = new AdapterStatus(people_status, getContext());
+            view_status.setAdapter(adapterChat);
+            view_status.setLayoutManager(linearLayoutManager);
+        }
     }
-}

@@ -26,6 +26,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         name_status = itemView.findViewById(R.id.name_status);
 
         ///Chat
+
         image_mess = itemView.findViewById(R.id.image_mess);
         name_mess = itemView.findViewById(R.id.name_mess);
         time = itemView.findViewById(R.id.time);

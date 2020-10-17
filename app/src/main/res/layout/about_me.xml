@@ -189,7 +189,7 @@
                 android:layout_marginLeft="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/_200sdp">
+                android:layout_height="@dimen/_170sdp">
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:scaleType="centerCrop"
@@ -201,7 +201,7 @@
                 android:layout_marginRight="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/_200sdp">
+                android:layout_height="@dimen/_170sdp">
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:scaleType="centerCrop"

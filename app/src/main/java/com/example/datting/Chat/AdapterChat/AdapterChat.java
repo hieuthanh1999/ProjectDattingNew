@@ -39,14 +39,26 @@ public class AdapterChat extends RecyclerView.Adapter<ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final PeopleClass people = peopleClasses.get(position);
 
-       // holder.image_mess.setImageResource(people.getImage());
+        // holder.image_mess.setImageResource(people.getImage());
         Glide.with(context).load(people.getImage()).into(holder.image_mess);
-        Glide.with(context).load(people.getImage_status()).into(holder.image_status);
+
+        //lay du lieu cua hoat dong
+        if (people.isCheck_status() == true) {
+            Glide.with(context).load(R.drawable.online).into(holder.image_status);
+        } else {
+            Glide.with(context).load(R.drawable.offline).into(holder.image_status);
+        }
 
         holder.name_mess.setText(people.getName());
         holder.message.setText(people.getMessage());
         holder.time.setText(people.getTime());
-        holder.soluong.setText(String.valueOf(people.getSoluong()));
+
+        if (people.getSoluong() == 0 ||  people.getSoluong() < 0) {
+            holder.soluong.setVisibility(View.GONE);
+        }
+        {
+            holder.soluong.setText(String.valueOf(people.getSoluong()));
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +69,9 @@ public class AdapterChat extends RecyclerView.Adapter<ViewHolder> {
                 Intent intent = new Intent(context, MessageActivity.class);
                 intent.putExtra("image",people.getImage());
                 intent.putExtra("name", people.getName());
-                intent.putExtra("image_status", people.getImage_status());
+                //truyền icon hoat dong
+                //intent.putExtra("image_status", people.getImage_status());
+                intent.putExtra("status_message",people.isCheck_status());
 
                 context.startActivity(intent);
 

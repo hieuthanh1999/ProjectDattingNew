@@ -10,8 +10,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_height="@dimen/_60sdp"
         android:orientation="horizontal"
         android:weightSum="5">
 
@@ -47,13 +47,10 @@
 
     </LinearLayout>
 
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_weight="19"
+<RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="0dp">
+    android:layout_height="match_parent">
     <RelativeLayout
-
         android:id="@+id/rela1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -112,7 +109,6 @@
                         android:textStyle="bold" />
 
             <RelativeLayout
-
                 android:layout_below="@id/age_hoso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -128,23 +124,17 @@
         </RelativeLayout>
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_marginTop="@dimen/_60sdp"
-        android:weightSum="6"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5">
-        <LinearLayout
-            android:layout_marginLeft="10dp"
-            android:weightSum="10"
-            android:orientation="horizontal"
-            android:layout_weight="4"
+        <RelativeLayout
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:id="@+id/muacre"
+            android:layout_below="@id/rela1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <RelativeLayout
-                android:layout_weight="8"
-                android:layout_width="match_parent"
+                android:id="@+id/image_1"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:src="@drawable/credit"
@@ -157,41 +147,37 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"/>
             </RelativeLayout>
-            <LinearLayout
-                android:layout_weight="2"
-                android:layout_width="match_parent"
-                android:layout_height="60dp">
+            <RelativeLayout
+                android:layout_marginTop="@dimen/_13sdp"
+                android:layout_toRightOf="@id/image_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
                 <TextView
+                    android:layout_marginLeft="10dp"
                     android:textColor="#F000"
                     android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:layout_gravity="center_vertical"
+                    android:textSize="16sp"
                     android:text="Mua credit"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-            </LinearLayout>
-        </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
         <TextView
             android:layout_marginRight="50dp"
             android:layout_marginLeft="90dp"
             android:background="#e6e6e6"
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
-        <LinearLayout
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <LinearLayout
-                android:weightSum="10"
-                android:orientation="horizontal"
-                android:layout_weight="3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_below="@id/muacre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
                 <RelativeLayout
-                    android:layout_weight="8"
-                    android:layout_width="match_parent"
+                    android:id="@+id/image_2"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:src="@drawable/gold"
@@ -204,21 +190,21 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"/>
                 </RelativeLayout>
-                <LinearLayout
-                    android:layout_weight="2"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp">
+                <RelativeLayout
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_toRightOf="@id/image_2"
+                    android:layout_marginTop="@dimen/_13sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
                     <TextView
                         android:textColor="#F000"
                         android:textStyle="bold"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:layout_gravity="center_vertical"
                         android:text="Kích hoạt Dating Gold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
-                </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
-</LinearLayout>
+                </RelativeLayout>
+        </RelativeLayout>
+</RelativeLayout>
 </LinearLayout>

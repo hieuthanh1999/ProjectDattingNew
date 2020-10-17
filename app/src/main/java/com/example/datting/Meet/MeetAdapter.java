@@ -92,12 +92,6 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
                             holder.about_me.setVisibility(View.VISIBLE);
                             holder.status_infor.setVisibility(VISIBLE);
 
-
-//                            if(holder.about_me.getVisibility() == VISIBLE)
-//                            {
-//                                holder.status_infor.setVisibility(View.VISIBLE);
-//                            }
-
                         } else {
                             holder.status_infor.setVisibility(View.GONE);
                             holder.xo_layout.setImageResource(R.drawable.ic_share);
@@ -106,7 +100,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
                             holder.linearLayout.setVisibility(View.GONE);
                             holder.linearLayout_infor.setVisibility(View.VISIBLE);
 
-                            if(holder.about_me.getVisibility() ==  View.GONE) {
+                            if (holder.about_me.getVisibility() == View.GONE) {
                                 holder.image.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
@@ -123,15 +117,10 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
                                     }
                                 });
                             }
-
-                        }
-
-                        dem++;
+                        }                dem++;
                     }
                 });
                 manager.setStackFrom(StackFrom.None);
-//                    manager.setVisibleCount(3);
-                //  manager.setTranslationInterval(8.0f);
                 manager.setScaleInterval(0.4f);
                 manager.setSwipeThreshold(0.3f);
                 manager.setMaxDegree(20.0f);
@@ -198,7 +187,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
 //            //if you need three fix imageview in width
 //            int devicewidth = displaymetrics.widthPixels;
             //if you need 4-5-6 anything fix imageview in height
-            int deviceheight = (displaymetrics.heightPixels) - (displaymetrics.heightPixels) / 3 - 60;
+            int deviceheight = (displaymetrics.heightPixels) - (displaymetrics.heightPixels) /3 + 20;
             // layout.getLayoutParams().width = devicewidth;
             //if you need same height as width you can set devicewidth in holder.image_view.getLayoutParams().height
             layout.getLayoutParams().height = deviceheight;
@@ -212,7 +201,7 @@ public class MeetAdapter extends RecyclerView.Adapter<MeetAdapter.ViewHolder> {
 //            //if you need three fix imageview in width
 //            int devicewidth = displaymetrics.widthPixels;
             //if you need 4-5-6 anything fix imageview in height
-            int deviceheight = (displaymetrics.heightPixels) + (displaymetrics.heightPixels) / 3 + 60;
+            int deviceheight = (displaymetrics.heightPixels) + (displaymetrics.heightPixels) / 3 + 20;
             // layout.getLayoutParams().width = devicewidth;
             //if you need same height as width you can set devicewidth in holder.image_view.getLayoutParams().height
             layout.getLayoutParams().height = deviceheight;

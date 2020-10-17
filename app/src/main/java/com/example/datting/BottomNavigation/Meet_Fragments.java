@@ -111,14 +111,14 @@ public class Meet_Fragments extends Fragment {
             public void onCardAppeared(View view, int position) {
                 tv = view.findViewById(R.id.item_name);
                 Log.d(TAG, "onCardAppeared: " + position + ", nama: " + tv.getText());
-                //addList();
+                addList();
             }
 
             @Override
             public void onCardDisappeared(View view, int position) {
                 tv = view.findViewById(R.id.item_name);
                 Log.d(TAG, "onCardAppeared: " + position + ", nama: " + tv.getText());
-               // addList();
+                addList();
 
             }
         });

@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -28,6 +29,7 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
+import java.sql.Time;
 import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -40,8 +42,8 @@ public class MessageActivity extends AppCompatActivity {
     public static final int QOS = 2;
 
     EditText editText;
-    CircleImageView image_message, image_status;
-    TextView name_message;
+    CircleImageView image_message, status_message;
+    TextView name_message, txt_online_message;
     ImageView quaylai;
     // user name for the chat lấy tên thiết bi
     //public static final String USER_NAME = Build.TAGS;
@@ -67,16 +69,28 @@ public class MessageActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyc_chat);
         editText = findViewById(R.id.edit_message);
         quaylai = findViewById(R.id.quaylai);
-        image_status = findViewById(R.id.image_status);
+        status_message = findViewById(R.id.status_message);
+        txt_online_message = findViewById(R.id.txt_online_message);
 
         Intent intent = getIntent();
         int image = intent.getIntExtra("image", 0);
-        int image_status1 = intent.getIntExtra("image_status", 0);
+        boolean check_status_message = intent.getBooleanExtra("status_message", false);
+
         String name = intent.getStringExtra("name");
 
         Glide.with(this).load(image).into(image_message);
-        Glide.with(this).load(image_status1).into(image_status);
-        //image_message.setImageResource(image);
+
+        if (check_status_message == true) {
+            status_message.setImageResource(R.drawable.online);
+            txt_online_message.setText("đang hoạt động");
+            txt_online_message.setTextSize(12);
+        } else {
+            txt_online_message.setText("đã hoạt động 2 phút trước");
+            txt_online_message.setTextSize(12);
+            txt_online_message.setTextColor(Color.parseColor("#7a7a7a"));
+            status_message.setImageResource(R.drawable.offline);
+        }
+
         name_message.setText(name);
         quaylai();
 
@@ -86,8 +100,8 @@ public class MessageActivity extends AppCompatActivity {
         connect();
 
     }
-    private  void quaylai()
-    {
+
+    private void quaylai() {
         quaylai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,6 +109,7 @@ public class MessageActivity extends AppCompatActivity {
             }
         });
     }
+
     private void connect() {
         client = new MqttAndroidClient(this, BROKER_URI, clientId);
         try {
@@ -131,12 +146,12 @@ public class MessageActivity extends AppCompatActivity {
                 // we only publish if there is message to publish
                 if (!message.isEmpty()) {
 
-                        message = USER_NAME +":" + message;
-                        //message = message.;
-                        editText.setText("");
-                        MqttMessage mqttMessage = new MqttMessage();
-                        mqttMessage.setQos(QOS);
-                        mqttMessage.setPayload(message.getBytes());
+                    message = USER_NAME + ":" + message;
+                    //message = message.;
+                    editText.setText("");
+                    MqttMessage mqttMessage = new MqttMessage();
+                    mqttMessage.setQos(QOS);
+                    mqttMessage.setPayload(message.getBytes());
 
                     try {
                         client.publish(TOPIC, mqttMessage, null, new IMqttActionListener() {
@@ -177,7 +192,7 @@ public class MessageActivity extends AppCompatActivity {
                     //String mess = new String(message.getPayload());
                     messages.add(new Message(new String(message.getPayload())));
                     adapterMessage.notifyDataSetChanged();
-                   // Log.d("hhh", new String(message.getPayload()));
+                    // Log.d("hhh", new String(message.getPayload()));
                 }
 
                 @Override
@@ -190,9 +205,6 @@ public class MessageActivity extends AppCompatActivity {
             Toast.makeText(this, "ERROR, an error occurs when subscribing", Toast.LENGTH_LONG).show();
         }
     }
-
-
-
 
 
 }
