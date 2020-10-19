@@ -52,7 +52,7 @@ public class Chat_Fragments extends Fragment {
 
 
     }
-
+        // do du lieu
     private void data_mess() {
         people_mess = new ArrayList<>();
         people_mess.add(new PeopleClass("Hiếu Thành", R.drawable.thanhh, true, "HIếu Thành anh đây", "16 phút", 4));
